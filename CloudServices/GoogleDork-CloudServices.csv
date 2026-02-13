@@ -1,0 +1,34 @@
+Query,Description,RiskLevel
+"site:docs.google.com inurl:""/d/"" ""<target>""","Finds Google Docs documents referencing the target domain (internal docs, spreadsheets, presentations)",Critical
+"site:onedrive.live.com ""<target>""","Finds OneDrive files referencing target -- internal presentations, photos, documents accidentally made public",Critical
+"site:dropbox.com/s ""<target>""","Finds shared Dropbox links containing source code, proprietary info, or customer data for target",Critical
+"site:box.com/s ""<target>""","Finds Box-hosted files like internal reports and client contracts for target",Critical
+"site:dev.azure.com ""<target>""","Finds Azure DevOps repos and pipelines exposing API keys, auth tokens, or unsecured repositories",Critical
+"site:sharepoint.com ""<target>""","Finds SharePoint-hosted internal communications, project plans, and employee records",Critical
+"site:digitaloceanspaces.com ""<target>""","Finds DigitalOcean Spaces storing database backups, config files, and logs for target",Critical
+"site:firebaseio.com ""<target>""","Finds Firebase-hosted app secrets, user data, and private API endpoints",Critical
+"site:jfrog.io ""<target>""","Finds exposed JFrog artifacts, builds, and release packages for target",High
+"site:s3-external-1.amazonaws.com ""<target>""","Finds files on lesser-known AWS S3 subdomain (s3-external-1) for target",Critical
+"site:s3.dualstack.us-east-1.amazonaws.com ""<target>""","Finds files on AWS S3 dualstack subdomain for target",Critical
+"site:s3.amazonaws.com ""<target>""","Finds files on primary AWS S3 subdomain for target",Critical
+"site:blob.core.windows.net ""<target>""","Finds files on Azure Blob Storage referencing target",Critical
+"site:googleapis.com ""<target>""","Finds Google Cloud Storage and API data referencing target",Critical
+"site:drive.google.com ""<target>""","Finds Google Drive files shared publicly referencing target",Critical
+"site:s3.amazonaws.com intitle:index.of.bucket","Finds AWS S3 buckets with directory listing enabled",Critical
+"site:amazonaws.com inurl:"".s3.amazonaws.com/""","Finds files on S3 buckets via URL pattern",Critical
+"site:.s3.amazonaws.com ""Company""","Finds company-related files on S3 buckets",High
+"intitle:index.of.bucket","Finds any cloud storage bucket with directory listing",High
+"site:*.amazonaws.com inurl:index.html","Finds S3 buckets serving static websites",Medium
+"site:storage.googleapis.com intitle:""Index of""","Finds Google Cloud Storage buckets with directory listing",Critical
+"site:s3.amazonaws.com intitle:""Index of""","Finds S3 buckets with directory listing enabled",Critical
+"site:blob.core.windows.net intitle:""Index of""","Finds Azure Blob Storage with directory listing",Critical
+"inurl:blob.core.windows.net","Finds Azure Blob Storage URLs",Medium
+"inurl:storage.googleapis.com","Finds Google Cloud Storage URLs",Medium
+"filetype:env ""DIGITALOCEAN_TOKEN""","Finds .env files with DigitalOcean API tokens",Critical
+"filetype:env ""HEROKU_API_KEY""","Finds .env files with Heroku API keys",Critical
+"inurl:/metrics","Finds exposed Kubernetes/Prometheus metrics endpoints",High
+"inurl:/healthz","Finds exposed Kubernetes health check endpoints",Medium
+"inurl:/actuator","Finds exposed Spring Boot actuator endpoints",High
+"inurl:/actuator/env","Finds Spring Boot actuator env endpoint (leaks config)",Critical
+"inurl:/actuator/health","Finds Spring Boot actuator health endpoint",Medium
+"intitle:""index of"" ""docker-compose""","Finds exposed Docker Compose files in directory listings",High
