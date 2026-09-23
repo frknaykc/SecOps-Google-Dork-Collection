@@ -32,3 +32,17 @@ Query,Description,RiskLevel
 "inurl:/actuator/env","Finds Spring Boot actuator env endpoint (leaks config)",Critical
 "inurl:/actuator/health","Finds Spring Boot actuator health endpoint",Medium
 "intitle:""index of"" ""docker-compose""","Finds exposed Docker Compose files in directory listings",High
+"site:r2.cloudflarestorage.com ""<target>""","Finds leaked files and buckets on Cloudflare R2 object storage for target",Critical
+"site:s3.wasabisys.com ""<target>""","Finds files stored on Wasabi Hot Cloud Storage referencing target",Critical
+"site:*.backblazeb2.com ""<target>""","Finds files and data stored on Backblaze B2 cloud storage referencing target",Critical
+"site:f000.backblazeb2.com ""<target>""","Finds files on Backblaze B2 primary download node for target",Critical
+"site:oss-*.aliyuncs.com ""<target>""","Finds files on Alibaba Cloud OSS object storage buckets referencing target",Critical
+"site:cos.*.myqcloud.com ""<target>""","Finds files stored on Tencent Cloud COS object storage referencing target",Critical
+"site:objectstorage.*.oraclecloud.com ""<target>""","Finds files on Oracle Cloud Infrastructure (OCI) object storage for target",Critical
+"site:s3.*.scw.cloud ""<target>""","Finds files stored on Scaleway Object Storage referencing target",Critical
+"site:*.supabase.co/storage/v1/object/public/","Finds publicly accessible files and media hosted on Supabase storage buckets",High
+"site:firebaseio.com inurl:"".json""","Discovers open Firebase Realtime Databases returning JSON data without authentication",Critical
+"filetype:tfstate ""terraform_version"" ""<target>""","Finds exposed Terraform state files referencing target infrastructure",Critical
+"filetype:tfvars ""access_key"" | ""secret_key""","Finds exposed Terraform variable files containing cloud access keys",Critical
+"filetype:yaml ""apiVersion: v1"" ""kind: Secret"" ""data:""","Finds exposed Kubernetes Secret definitions with base64 encoded credentials",Critical
+"""clusters:"" ""client-certificate-data:"" filetype:yaml","Finds exposed Kubernetes kubeconfig files granting cluster API access",Critical

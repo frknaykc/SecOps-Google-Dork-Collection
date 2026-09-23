@@ -6,7 +6,7 @@ Google Dork queries specifically designed for **proactive threat hunting** -- id
 
 | Metric | Value |
 |--------|-------|
-| **Total Dorks** | 245 |
+| **Total Dorks** | 272 |
 | **Risk Levels** | Critical, High, Medium, Informational |
 | **CSV File** | [GoogleDork-ThreatHunting.csv](GoogleDork-ThreatHunting.csv) |
 
@@ -292,10 +292,11 @@ intext:"QakBot" | intext:"Qbot" intext:"C2" intext:"panel"
 
 | Risk Level | Count | Description |
 |------------|-------|-------------|
-| **Critical** | 169 | Active C2 panels, malware infrastructure, web shells, ransomware, credential dumps, stealer panels |
-| **High** | 45 | Phishing pages, defacements, cryptominers, compromised indicators, exposed IR tools, tunneling |
+| **Critical** | 194 | Active C2 panels, malware infrastructure, web shells, ransomware, credential dumps, stealer panels |
+| **High** | 47 | Phishing pages, defacements, cryptominers, compromised indicators, exposed IR tools, tunneling |
 | **Medium** | 18 | Honeypots, detection rules, DNS tunneling, IDS/IPS logs, STIX/IOC feeds |
 | **Informational** | 13 | Threat intelligence reports, sandbox analysis, malware repositories, APT tracking |
+| **Total** | **272** | |
 
 ## Usage Tips
 

@@ -12,7 +12,7 @@
 # Google Dork Collection for Threat Hunters, Bug Bounty Researchers, Pentesters & Red Teamers
 
 <p align="center">
-  <strong>A curated collection of 18,868+ Google Dork queries organized by category — detect exposed infrastructure, sensitive files, C2 panels, and misconfigurations.</strong>
+  <strong>A curated collection of 19,047+ Google Dork queries organized by category — detect exposed infrastructure, sensitive files, C2 panels, AI services, and misconfigurations.</strong>
 </p>
 
 <p align="center">
@@ -72,21 +72,24 @@ However, the same techniques can also be leveraged by malicious actors for recon
 | Category | Folder | Description | Dork Count |
 |----------|--------|-------------|------------|
 | Web Servers | [WebServer/](WebServer/) | Identify web server types, versions, default pages, and misconfigurations | 277 |
-| Databases | [Database/](Database/) | Find exposed database interfaces, phpMyAdmin, and SQL/NoSQL management tools | 115 |
-| Login Pages | [LoginPages/](LoginPages/) | Discover exposed login portals, VPN, SSO, and authentication endpoints | 1,851 |
-| Sensitive Files | [SensitiveFiles/](SensitiveFiles/) | Locate exposed config files, API keys, credentials, logs, and private keys | 2,853 |
+| Databases | [Database/](Database/) | Find exposed database interfaces, phpMyAdmin, and SQL/NoSQL management tools | 130 |
+| Login Pages | [LoginPages/](LoginPages/) | Discover exposed login portals, VPN, SSO, and authentication endpoints | 1,859 |
+| Sensitive Files | [SensitiveFiles/](SensitiveFiles/) | Locate exposed config files, API keys, credentials, logs, and private keys | 2,864 |
 | IoT Devices | [IoTDevices/](IoTDevices/) | Find internet-connected cameras, printers, NAS, and smart device interfaces | 778 |
 | Network Devices | [NetworkDevices/](NetworkDevices/) | Discover monitoring tools, scan reports, network graphs, and device interfaces | 121 |
 | CMS | [CMS/](CMS/) | Identify WordPress, Joomla, Drupal, TYPO3, Magento, and other CMS installations | 878 |
-| Cloud Services | [CloudServices/](CloudServices/) | Find leaked files on AWS S3, Azure Blob, GCP, and exposed Kubernetes endpoints | 33 |
+| Cloud Services | [CloudServices/](CloudServices/) | Find leaked files on AWS, Azure, GCP, Cloudflare R2, Wasabi, Backblaze B2, and Firebase/Supabase | 47 |
 | Vulnerable Servers | [VulnerableServers/](VulnerableServers/) | Detect vulnerable parameters (XSS, SQLi, SSRF, LFI, RCE), web shells, and exposed admin tools | 2,632 |
 | Error Messages | [ErrorMessages/](ErrorMessages/) | Find verbose error messages leaking SQL, stack traces, and server details | 247 |
-| Backups | [Backups/](Backups/) | Find exposed backup files, database dumps, and archived web roots | 56 |
+| Backups | [Backups/](Backups/) | Find exposed backup files, database dumps, and archived web roots | 65 |
 | Wiki | [Wiki/](Wiki/) | Discover MediaWiki/WikkaWiki installations, login pages, and misconfigurations | 51 |
 | Recon | [Recon/](Recon/) | Template-based dorks for subdomain enum, code leaks, bug bounty, and API discovery | 8,731 |
-| Threat Hunting | [ThreatHunting/](ThreatHunting/) | Detect C2 infrastructure, malware panels, web shells, phishing kits, and threat intel resources | 245 |
+| Threat Hunting | [ThreatHunting/](ThreatHunting/) | Detect C2 infrastructure, malware panels, infostealer logs, web shells, and phishing kits | 272 |
+| DevOps & CI/CD | [DevOpsCI/](DevOpsCI/) | Uncover exposed CI/CD pipelines, container registries, Kubernetes clusters, and monitoring tools | 30 |
+| AI, LLM & MLOps | [AI-MLOps/](AI-MLOps/) | Discover exposed Ollama, Open WebUI, Flowise, vector databases, and leaked AI API keys | 46 |
+| OSINT & Leaks | [OSINT/](OSINT/) | Discover exposed SaaS collaboration spaces (Notion, Airtable, Trello), Zoom recordings, and PII | 19 |
 
-> **Total: 18,868 unique dorks** across 14 categories.
+> **Total: 19,047 unique dorks** across 17 categories.
 
 ---
 

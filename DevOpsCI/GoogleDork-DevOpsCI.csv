@@ -1,0 +1,31 @@
+Query,Description,RiskLevel
+"intitle:""Argo CD"" inurl:""/applications""","Finds exposed Argo CD GitOps continuous delivery control planes",Critical
+"intitle:""Argo Workflows"" inurl:"":2746""","Discovers exposed Argo Workflows Kubernetes pipeline interfaces",Critical
+"intitle:""Dashboard [Jenkins]"" inurl:"":8080""","Detects exposed Jenkins automation servers without authentication",Critical
+"inurl:"":8080/job/"" intitle:""Jenkins""","Finds exposed Jenkins CI/CD pipeline job definitions and build console outputs",Critical
+"intitle:""Harbor"" inurl:""/harbor/projects""","Finds exposed Harbor container registries and internal project repositories",Critical
+"inurl:""/v2/_catalog"" intitle:""index of""","Discovers exposed private Docker Registry HTTP API v2 catalog endpoints",Critical
+"intitle:""Portainer"" (inurl:"":9000"" | inurl:"":9443/#/auth"")","Finds exposed Portainer container management UI login pages",Critical
+"intitle:""Rancher"" inurl:""/login""","Discovers exposed Rancher multi-cluster Kubernetes management dashboards",Critical
+"intitle:""Explore projects · GitLab"" site:<target>","Finds public or exposed internal GitLab projects and source repositories",High
+"intitle:""Explore - Gitea: Git with a cup of tea""","Finds exposed Gitea self-hosted Git service instances",High
+"intitle:""Log in to TeamCity""","Discovers exposed JetBrains TeamCity CI/CD build management login pages",High
+"intitle:""Log In - Atlassian Bamboo""","Finds exposed Atlassian Bamboo continuous integration server login portals",High
+"intitle:""SonarQube"" inurl:""/projects""","Detects exposed SonarQube code quality and static security vulnerability dashboards",High
+"intitle:""Vault"" inurl:"":8200/ui/""","Finds exposed HashiCorp Vault secrets management UI consoles",Critical
+"intitle:""Consul by HashiCorp"" inurl:"":8500/ui""","Discovers exposed HashiCorp Consul service mesh and key-value store UIs",Critical
+"intitle:""Kubernetes Dashboard""","Finds exposed Kubernetes Dashboard cluster management web interfaces",Critical
+"inurl:"":10255/pods"" | inurl:"":10250/pods""","Detects exposed Kubernetes Kubelet API endpoints listing running pods and containers",Critical
+"inurl:"":2379/version"" | inurl:"":2379/v2/keys""","Finds exposed Kubernetes etcd distributed key-value store HTTP endpoints",Critical
+"intitle:""Prometheus Time Series Collection"" inurl:"":9090/graph""","Discovers exposed Prometheus monitoring and alerting web consoles",High
+"inurl:"":9090/targets"" intitle:""Prometheus""","Finds exposed Prometheus scrape targets exposing internal infrastructure topology",High
+"intitle:""Grafana"" (inurl:""/login"" | inurl:""/d/"" | inurl:""/dashboards"")","Finds exposed Grafana metric visualization and telemetry dashboards",High
+"intitle:""Uptime Kuma"" inurl:"":3001""","Discovers exposed Uptime Kuma monitoring dashboards leaking internal server domains",Medium
+"intitle:""Jaeger UI"" inurl:"":16686""","Finds exposed Jaeger distributed tracing dashboards revealing microservice traces",High
+"intitle:""Zipkin"" inurl:"":9411""","Detects exposed Zipkin distributed tracing system web consoles",High
+"intitle:""Checkmk"" inurl:""/check_mk/login.py""","Discovers Checkmk IT infrastructure monitoring login portals",High
+"intitle:""Zabbix"" inurl:""index.php""","Finds exposed Zabbix enterprise monitoring web interface login pages",High
+"intitle:""RabbitMQ Management""","Discovers exposed RabbitMQ message broker management consoles",High
+"intitle:""Kafdrop"" (inurl:"":9000"" | inurl:"":9001"")","Finds exposed Kafdrop Kafka cluster web UI browsers",Critical
+"intitle:""AKHQ"" inurl:"":8080""","Detects exposed AKHQ (Kafka GUI) management interfaces",Critical
+"intitle:""Sign In to Sentry""","Discovers self-hosted Sentry application monitoring and crash reporting login pages",High

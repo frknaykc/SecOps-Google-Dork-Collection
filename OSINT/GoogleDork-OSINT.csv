@@ -1,0 +1,20 @@
+Query,Description,RiskLevel
+"site:notion.site ""<target>""","Finds publicly published Notion workspaces and internal documentation for target",High
+"site:notion.so ""<target>""","Finds internal processes, onboarding docs, and customer notes shared via Notion",High
+"site:airtable.com/shr ""<target>""","Finds shared Airtable databases containing customer data, lead lists, or internal records",Critical
+"site:trello.com/b/ ""<target>""","Finds public Trello boards revealing company roadmaps, sprint tasks, and internal notes",High
+"site:figma.com/file/ ""<target>""","Finds publicly accessible Figma design files and product prototypes for target",Medium
+"site:miro.com/app/board/ ""<target>""","Finds open Miro whiteboards detailing internal system architectures and network diagrams",High
+"site:coda.io/d/ ""<target>""","Finds public Coda documents containing project plans and internal specifications",High
+"site:zoom.us/rec/play ""<target>""","Finds publicly indexed Zoom cloud meeting recordings without password protection",Critical
+"site:zoom.us/rec/share ""<target>""","Finds shared links to sensitive business Zoom conference recordings",Critical
+"site:sharepoint.com inurl:"":v:"" ""<target>""","Finds publicly accessible Microsoft Teams meeting video recordings stored on SharePoint",High
+"site:loom.com/share ""<target>""","Finds open Loom screen recordings containing internal product demos and debug sessions",High
+"site:docs.google.com/spreadsheets/ (""confidential"" | ""salary"" | ""passwords"") ""<target>""","Finds publicly accessible Google Sheets labeled with confidentiality markers or salary data",Critical
+"site:docs.google.com/forms inurl:viewanalytics ""<target>""","Finds live response analytics and participant submission data for Google Forms",High
+"filetype:xlsx | filetype:csv (""employee list"" | ""staff directory"" | ""salary"") ""<target>""","Finds exposed employee directories, staff rosters, and compensation sheets",Critical
+"filetype:pdf (""organization chart"" | ""organigramme"") ""<target>""","Finds target organizational hierarchy charts revealing internal reporting structures",Medium
+"site:postman.co/workspace/ ""<target>""","Finds public Postman workspaces revealing internal API collections and endpoint parameters",High
+"site:app.swaggerhub.com/apis/ ""<target>""","Finds public SwaggerHub API definitions exposing enterprise API schemas",High
+"site:rentry.co ""<target>""","Finds anonymous paste text leaks and configuration notes referencing target",Medium
+"site:controlc.com ""<target>""","Finds target configuration dumps and leaked text snippets on ControlC",High

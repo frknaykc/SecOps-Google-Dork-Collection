@@ -6,10 +6,10 @@ Google Dork queries for finding sensitive files, leaked data, and misconfigurati
 
 | Risk Level | Count | Description |
 |------------|-------|-------------|
-| Critical | 18 | Direct access to leaked docs, source code, credentials, cloud storage |
-| High | 8 | Exposed artifacts, Kubernetes endpoints, Docker configs |
-| Medium | 7 | URL pattern discovery, health check endpoints |
-| **Total** | **33** | |
+| Critical | 30 | Direct access to leaked docs, source code, credentials, multi-cloud storage, and IaC secrets |
+| High | 9 | Exposed artifacts, Supabase storage, Kubernetes endpoints, Docker configs |
+| Medium | 8 | URL pattern discovery, health check endpoints |
+| **Total** | **47** | |
 
 ## Query Reference
 
@@ -30,9 +30,11 @@ Google Dork queries for finding sensitive files, leaked data, and misconfigurati
 | `site:dev.azure.com "<target>"` | Azure DevOps | Repos, pipelines, API keys, auth tokens |
 | `site:sharepoint.com "<target>"` | SharePoint | Internal communications, project plans, employee records |
 | `site:firebaseio.com "<target>"` | Firebase | App secrets, user data, private API endpoints |
+| `site:firebaseio.com inurl:".json"` | Firebase | Open Firebase Realtime Databases returning JSON without auth |
+| `site:*.supabase.co/storage/v1/object/public/` | Supabase | Publicly accessible files and media hosted on Supabase buckets |
 | `site:jfrog.io "<target>"` | JFrog | Exposed artifacts, builds, and release packages |
 
-### Cloud Object Storage
+### Cloud Object Storage (Multi-Cloud)
 
 | Query | Platform | What It Finds |
 |-------|----------|---------------|
@@ -45,38 +47,35 @@ Google Dork queries for finding sensitive files, leaked data, and misconfigurati
 | `site:storage.googleapis.com intitle:"Index of"` | Google Cloud Storage | GCS buckets with directory listing |
 | `site:googleapis.com "<target>"` | Google Cloud Storage | Google Cloud Storage and API data |
 | `site:digitaloceanspaces.com "<target>"` | DigitalOcean Spaces | Database backups, config files, logs |
+| `site:r2.cloudflarestorage.com "<target>"` | Cloudflare R2 | Files and buckets on Cloudflare R2 object storage |
+| `site:s3.wasabisys.com "<target>"` | Wasabi Cloud | Files stored on Wasabi Hot Cloud Storage |
+| `site:*.backblazeb2.com "<target>"` | Backblaze B2 | Files and data stored on Backblaze B2 cloud storage |
+| `site:f000.backblazeb2.com "<target>"` | Backblaze B2 | Files on Backblaze B2 primary download node |
+| `site:oss-*.aliyuncs.com "<target>"` | Alibaba Cloud OSS | Files on Alibaba Cloud OSS object storage buckets |
+| `site:cos.*.myqcloud.com "<target>"` | Tencent Cloud COS | Files stored on Tencent Cloud COS object storage |
+| `site:objectstorage.*.oraclecloud.com "<target>"` | Oracle OCI | Files on Oracle Cloud Infrastructure (OCI) object storage |
+| `site:s3.*.scw.cloud "<target>"` | Scaleway Cloud | Files stored on Scaleway Object Storage |
 | `intitle:index.of.bucket` | Any Cloud Storage | Cloud storage buckets with open directory listings |
+
+### Infrastructure as Code & Cluster Credentials
+
+| Query | What It Finds | Risk Level |
+|-------|---------------|------------|
+| `filetype:tfstate "terraform_version" "<target>"` | Exposed Terraform state files referencing target infrastructure | Critical |
+| `filetype:tfvars "access_key" \| "secret_key"` | Exposed Terraform variable files containing cloud access keys | Critical |
+| `filetype:yaml "apiVersion: v1" "kind: Secret" "data:"` | Exposed Kubernetes Secret definitions with credentials | Critical |
+| `"clusters:" "client-certificate-data:" filetype:yaml` | Exposed Kubernetes kubeconfig files granting cluster API access | Critical |
 
 ### Kubernetes & Container Endpoints
 
-| Query | What It Finds |
-|-------|---------------|
-| `inurl:/metrics` | Exposed Kubernetes/Prometheus metrics endpoints |
-| `inurl:/healthz` | Exposed Kubernetes health check endpoints |
-| `inurl:/actuator` | Exposed Spring Boot actuator endpoints |
-| `inurl:/actuator/env` | Spring Boot actuator environment endpoint (leaks config) |
-| `intitle:"index of" "docker-compose"` | Exposed Docker Compose files in directory listings |
-
-## Related HackerOne Reports
-
-- **Firebase misconfiguration**: [HackerOne #1065134](https://hackerone.com/reports/1065134) -- Exposed Firebase database with user data
-- **JFrog artifact exposure**: [HackerOne #911606](https://hackerone.com/reports/911606) -- Leaked build artifacts and packages
-
-## Example Usage
-
-Search multiple cloud platforms at once:
-
-```
-(site:dropbox.com/s | site:box.com/s | site:onedrive.live.com) "tesla.com"
-```
-
-Combine with specific file types:
-
-```
-site:digitaloceanspaces.com "tesla.com" filetype:sql
-site:s3.amazonaws.com "tesla.com" filetype:env
-```
+| Query | What It Finds | Risk Level |
+|-------|---------------|------------|
+| `inurl:/metrics` | Exposed Kubernetes/Prometheus metrics endpoints | High |
+| `inurl:/healthz` | Exposed Kubernetes health check endpoints | Medium |
+| `inurl:/actuator` | Exposed Spring Boot actuator endpoints | High |
+| `inurl:/actuator/env` | Spring Boot actuator environment endpoint (leaks config) | Critical |
+| `intitle:"index of" "docker-compose"` | Exposed Docker Compose files in directory listings | High |
 
 ## Data Source
 
-All queries in this collection are sourced from publicly available Google Dorking databases and security research. See the CSV file for the complete machine-readable dataset.
+CSV file: [`GoogleDork-CloudServices.csv`](GoogleDork-CloudServices.csv)

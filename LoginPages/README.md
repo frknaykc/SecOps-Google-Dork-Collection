@@ -1,42 +1,45 @@
 # Login Pages - Google Dork Queries
 
-Dork queries designed to discover exposed login portals, VPN gateways, SSO endpoints, admin panels, and authentication interfaces.
+Dork queries designed to discover exposed login portals, VPN gateways, SSO endpoints, admin panels, Zero Trust proxies, and authentication interfaces.
 
 ## Summary
 
-| Risk Level | Count |
-|------------|-------|
-| High | 20 |
-| Medium | 11 |
-| Low | 5 |
-
-**Total: 1,851 dorks**
+| Risk Level | Count | Description |
+|------------|-------|-------------|
+| Critical | 6 | High-impact enterprise VPN gateways (Palo Alto GlobalProtect, Ivanti, Fortinet, F5, Citrix, Teleport) |
+| High | 36 | Enterprise SSO endpoints, admin consoles, and remote management portals |
+| Medium | 1,811 | Generic admin logins, CMS authentication pages, and portal forms |
+| Low | 6 | Informational authentication landing pages and password reset screens |
+| **Total** | **1,859** | |
 
 ## Coverage
 
 | Category | Description |
 |----------|-------------|
-| CMS Login | WordPress, Joomla admin login pages |
-| Monitoring | Grafana, Kibana, Jenkins, GitLab login pages |
-| SSO/OAuth | Keycloak, OAuth, OpenID login endpoints |
-| VPN | SSL VPN, Cisco ASA, Citrix NetScaler login pages |
-| Admin Panels | Generic admin panels, phpMyAdmin, dashboard logins |
-| Remote Access | Remote desktop web connections, portal logins |
+| **Enterprise VPN & Zero Trust** | Palo Alto GlobalProtect, Ivanti / Pulse Secure, Fortinet SSL-VPN, SonicWall, Teleport |
+| **Application Delivery Controllers** | F5 BIG-IP TMUI / APM, Citrix NetScaler Gateway |
+| **SSO / IAM** | Keycloak realms, Okta, OAuth, OpenID Connect authentication endpoints |
+| **CMS Login** | WordPress (`wp-login.php`), Joomla, Drupal, Magento admin portals |
+| **Monitoring & CI/CD** | Jenkins, GitLab, Grafana, Kibana login screens |
+| **Remote Access** | RDP Web Access, Apache Guacamole, VMware Horizon web portals |
 
 ## Example Usage
 
 ```
-# Find Jenkins CI login pages
-intitle:"Jenkins" inurl:"/login"
+# Find Palo Alto Networks GlobalProtect VPN login portals
+intitle:"GlobalProtect Portal" inurl:"/global-protect/login.esp"
 
-# Find Cisco ASA VPN login pages
-inurl:/+CSCOE+/logon.html
+# Find Ivanti Connect Secure / Pulse Secure SSL-VPN portals
+inurl:"/dana-na/auth/url_default/welcome.cgi"
 
-# Find any admin login pages with parameter URLs
-inurl:& intext:admin intext:login
+# Find Fortinet FortiGate SSL-VPN authentication pages
+inurl:"/remote/login" "FortiToken" | "Please login"
 
-# Find Grafana dashboard login pages
-inurl:login "Welcome to Grafana"
+# Find F5 BIG-IP TMUI / APM login interfaces
+inurl:"/tmui/login.jsp" | inurl:"/my.policy"
+
+# Find Teleport Zero Trust access proxy login pages
+intitle:"Teleport" inurl:":3080/web/login"
 ```
 
 ## Data Source
