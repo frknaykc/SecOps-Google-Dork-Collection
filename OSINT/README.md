@@ -4,12 +4,16 @@ A curated collection of Google Dork queries designed for **Open Source Intellige
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| Critical | 5 | Direct access to shared customer databases, unprotected meeting recordings, salary rosters, and credential dumps |
-| High | 11 | Exposed corporate workspaces, sprint roadmaps, architecture diagrams, API schemas, and form submissions |
-| Medium | 3 | Public product UI mockups, organizational charts, and anonymous paste leaks |
-| **Total** | **19** | |
+| Risk Level | Count |
+|---|---:|
+| Critical | 5 |
+| High | 11 |
+| Medium | 3 |
+| Low | 19 |
+
+**Total: 38 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
 

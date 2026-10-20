@@ -1,20 +1,39 @@
-Query,Description,RiskLevel
-"site:notion.site ""<target>""","Finds publicly published Notion workspaces and internal documentation for target",High
-"site:notion.so ""<target>""","Finds internal processes, onboarding docs, and customer notes shared via Notion",High
-"site:airtable.com/shr ""<target>""","Finds shared Airtable databases containing customer data, lead lists, or internal records",Critical
-"site:trello.com/b/ ""<target>""","Finds public Trello boards revealing company roadmaps, sprint tasks, and internal notes",High
-"site:figma.com/file/ ""<target>""","Finds publicly accessible Figma design files and product prototypes for target",Medium
-"site:miro.com/app/board/ ""<target>""","Finds open Miro whiteboards detailing internal system architectures and network diagrams",High
-"site:coda.io/d/ ""<target>""","Finds public Coda documents containing project plans and internal specifications",High
-"site:zoom.us/rec/play ""<target>""","Finds publicly indexed Zoom cloud meeting recordings without password protection",Critical
-"site:zoom.us/rec/share ""<target>""","Finds shared links to sensitive business Zoom conference recordings",Critical
-"site:sharepoint.com inurl:"":v:"" ""<target>""","Finds publicly accessible Microsoft Teams meeting video recordings stored on SharePoint",High
-"site:loom.com/share ""<target>""","Finds open Loom screen recordings containing internal product demos and debug sessions",High
-"site:docs.google.com/spreadsheets/ (""confidential"" | ""salary"" | ""passwords"") ""<target>""","Finds publicly accessible Google Sheets labeled with confidentiality markers or salary data",Critical
-"site:docs.google.com/forms inurl:viewanalytics ""<target>""","Finds live response analytics and participant submission data for Google Forms",High
-"filetype:xlsx | filetype:csv (""employee list"" | ""staff directory"" | ""salary"") ""<target>""","Finds exposed employee directories, staff rosters, and compensation sheets",Critical
-"filetype:pdf (""organization chart"" | ""organigramme"") ""<target>""","Finds target organizational hierarchy charts revealing internal reporting structures",Medium
-"site:postman.co/workspace/ ""<target>""","Finds public Postman workspaces revealing internal API collections and endpoint parameters",High
-"site:app.swaggerhub.com/apis/ ""<target>""","Finds public SwaggerHub API definitions exposing enterprise API schemas",High
-"site:rentry.co ""<target>""","Finds anonymous paste text leaks and configuration notes referencing target",Medium
-"site:controlc.com ""<target>""","Finds target configuration dumps and leaked text snippets on ControlC",High
+"Query","Description","RiskLevel"
+"site:notion.site ""<target>""","Finds publicly published Notion workspaces and internal documentation for target","High"
+"site:notion.so ""<target>""","Finds internal processes, onboarding docs, and customer notes shared via Notion","High"
+"site:airtable.com/shr ""<target>""","Finds shared Airtable databases containing customer data, lead lists, or internal records","Critical"
+"site:trello.com/b/ ""<target>""","Finds public Trello boards revealing company roadmaps, sprint tasks, and internal notes","High"
+"site:figma.com/file/ ""<target>""","Finds publicly accessible Figma design files and product prototypes for target","Medium"
+"site:miro.com/app/board/ ""<target>""","Finds open Miro whiteboards detailing internal system architectures and network diagrams","High"
+"site:coda.io/d/ ""<target>""","Finds public Coda documents containing project plans and internal specifications","High"
+"site:zoom.us/rec/play ""<target>""","Finds publicly indexed Zoom cloud meeting recordings without password protection","Critical"
+"site:zoom.us/rec/share ""<target>""","Finds shared links to sensitive business Zoom conference recordings","Critical"
+"site:sharepoint.com inurl:"":v:"" ""<target>""","Finds publicly accessible Microsoft Teams meeting video recordings stored on SharePoint","High"
+"site:loom.com/share ""<target>""","Finds open Loom screen recordings containing internal product demos and debug sessions","High"
+"site:docs.google.com/spreadsheets/ (""confidential"" | ""salary"" | ""passwords"") ""<target>""","Finds publicly accessible Google Sheets labeled with confidentiality markers or salary data","Critical"
+"site:docs.google.com/forms inurl:viewanalytics ""<target>""","Finds live response analytics and participant submission data for Google Forms","High"
+"filetype:xlsx | filetype:csv (""employee list"" | ""staff directory"" | ""salary"") ""<target>""","Finds exposed employee directories, staff rosters, and compensation sheets","Critical"
+"filetype:pdf (""organization chart"" | ""organigramme"") ""<target>""","Finds target organizational hierarchy charts revealing internal reporting structures","Medium"
+"site:postman.co/workspace/ ""<target>""","Finds public Postman workspaces revealing internal API collections and endpoint parameters","High"
+"site:app.swaggerhub.com/apis/ ""<target>""","Finds public SwaggerHub API definitions exposing enterprise API schemas","High"
+"site:rentry.co ""<target>""","Finds anonymous paste text leaks and configuration notes referencing target","Medium"
+"site:controlc.com ""<target>""","Finds target configuration dumps and leaked text snippets on ControlC","High"
+"site:<target> ""bug bounty"" ""in scope"" ""out of scope""","Find authorized testing scope statements before assessing an asset.","Low"
+"site:<target> ""vulnerability disclosure policy"" ""scope""","Find disclosure policy scope and reporting guidance.","Low"
+"site:<target> ""subprocessors"" ""data processing""","Locate public subprocessors lists for third-party inventory.","Low"
+"site:<target> ""trust center"" ""subprocessors""","Find indexed trust-center pages describing vendors handling data.","Low"
+"site:<target> ""status page"" ""incident history""","Find public service status and incident history references.","Low"
+"site:<target> ""postmortem"" ""incident"" ""timeline""","Locate published incident retrospectives for defensive context.","Low"
+"site:<target> ""SOC 2"" ""system description""","Find public descriptions of assessed service boundaries, not confidential reports.","Low"
+"site:<target> ""data residency"" ""regions""","Find public data residency guidance for cloud footprint inventory.","Low"
+"site:<target> ""service level agreement"" ""availability""","Find public service-level commitments relevant to infrastructure mapping.","Low"
+"site:<target> ""API changelog"" ""breaking changes""","Locate public API evolution notes for authorized service inventory.","Low"
+"site:<target> ""deprecation notice"" ""migration guide""","Find public retirement and migration notices for legacy service discovery.","Low"
+"site:<target> ""developer portal"" ""sandbox environment""","Find published developer sandbox guidance without implying it is in scope.","Low"
+"site:<target> ""partner integration"" ""OAuth""","Locate public identity integration pages describing partner connections.","Low"
+"site:<target> ""open source"" ""repositories"" ""GitHub""","Find official public repository listings to map maintained software.","Low"
+"site:github.com ""<target>"" ""SECURITY.md"" ""reporting""","Find target-related GitHub security policy guidance.","Low"
+"site:github.com ""<target>"" ""CODEOWNERS"" ""security""","Locate published repository ownership mappings for review.","Low"
+"site:<target> ""architecture"" ""availability zones""","Find public infrastructure architecture descriptions.","Low"
+"site:<target> ""webhook events"" ""integration""","Find public webhook event catalogs used by integrations.","Low"
+"site:<target> ""compliance"" ""penetration testing policy""","Locate authorized testing and compliance guidance.","Low"

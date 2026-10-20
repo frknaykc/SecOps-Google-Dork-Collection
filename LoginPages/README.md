@@ -4,13 +4,16 @@ Dork queries designed to discover exposed login portals, VPN gateways, SSO endpo
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| Critical | 6 | High-impact enterprise VPN gateways (Palo Alto GlobalProtect, Ivanti, Fortinet, F5, Citrix, Teleport) |
-| High | 36 | Enterprise SSO endpoints, admin consoles, and remote management portals |
-| Medium | 1,811 | Generic admin logins, CMS authentication pages, and portal forms |
-| Low | 6 | Informational authentication landing pages and password reset screens |
-| **Total** | **1,859** | |
+| Risk Level | Count |
+|---|---:|
+| Critical | 6 |
+| High | 28 |
+| Medium | 1,661 |
+| Low | 10 |
+
+**Total: 1,705 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
 

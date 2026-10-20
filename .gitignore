@@ -6,3 +6,7 @@ Thumbs.db
 *.xml
 *.tmp
 extract_*.py
+
+# Python validation artifacts
+__pycache__/
+*.py[cod]

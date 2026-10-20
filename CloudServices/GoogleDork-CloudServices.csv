@@ -1,48 +1,96 @@
-Query,Description,RiskLevel
-"site:docs.google.com inurl:""/d/"" ""<target>""","Finds Google Docs documents referencing the target domain (internal docs, spreadsheets, presentations)",Critical
-"site:onedrive.live.com ""<target>""","Finds OneDrive files referencing target -- internal presentations, photos, documents accidentally made public",Critical
-"site:dropbox.com/s ""<target>""","Finds shared Dropbox links containing source code, proprietary info, or customer data for target",Critical
-"site:box.com/s ""<target>""","Finds Box-hosted files like internal reports and client contracts for target",Critical
-"site:dev.azure.com ""<target>""","Finds Azure DevOps repos and pipelines exposing API keys, auth tokens, or unsecured repositories",Critical
-"site:sharepoint.com ""<target>""","Finds SharePoint-hosted internal communications, project plans, and employee records",Critical
-"site:digitaloceanspaces.com ""<target>""","Finds DigitalOcean Spaces storing database backups, config files, and logs for target",Critical
-"site:firebaseio.com ""<target>""","Finds Firebase-hosted app secrets, user data, and private API endpoints",Critical
-"site:jfrog.io ""<target>""","Finds exposed JFrog artifacts, builds, and release packages for target",High
-"site:s3-external-1.amazonaws.com ""<target>""","Finds files on lesser-known AWS S3 subdomain (s3-external-1) for target",Critical
-"site:s3.dualstack.us-east-1.amazonaws.com ""<target>""","Finds files on AWS S3 dualstack subdomain for target",Critical
-"site:s3.amazonaws.com ""<target>""","Finds files on primary AWS S3 subdomain for target",Critical
-"site:blob.core.windows.net ""<target>""","Finds files on Azure Blob Storage referencing target",Critical
-"site:googleapis.com ""<target>""","Finds Google Cloud Storage and API data referencing target",Critical
-"site:drive.google.com ""<target>""","Finds Google Drive files shared publicly referencing target",Critical
-"site:s3.amazonaws.com intitle:index.of.bucket","Finds AWS S3 buckets with directory listing enabled",Critical
-"site:amazonaws.com inurl:"".s3.amazonaws.com/""","Finds files on S3 buckets via URL pattern",Critical
-"site:.s3.amazonaws.com ""Company""","Finds company-related files on S3 buckets",High
-"intitle:index.of.bucket","Finds any cloud storage bucket with directory listing",High
-"site:*.amazonaws.com inurl:index.html","Finds S3 buckets serving static websites",Medium
-"site:storage.googleapis.com intitle:""Index of""","Finds Google Cloud Storage buckets with directory listing",Critical
-"site:s3.amazonaws.com intitle:""Index of""","Finds S3 buckets with directory listing enabled",Critical
-"site:blob.core.windows.net intitle:""Index of""","Finds Azure Blob Storage with directory listing",Critical
-"inurl:blob.core.windows.net","Finds Azure Blob Storage URLs",Medium
-"inurl:storage.googleapis.com","Finds Google Cloud Storage URLs",Medium
-"filetype:env ""DIGITALOCEAN_TOKEN""","Finds .env files with DigitalOcean API tokens",Critical
-"filetype:env ""HEROKU_API_KEY""","Finds .env files with Heroku API keys",Critical
-"inurl:/metrics","Finds exposed Kubernetes/Prometheus metrics endpoints",High
-"inurl:/healthz","Finds exposed Kubernetes health check endpoints",Medium
-"inurl:/actuator","Finds exposed Spring Boot actuator endpoints",High
-"inurl:/actuator/env","Finds Spring Boot actuator env endpoint (leaks config)",Critical
-"inurl:/actuator/health","Finds Spring Boot actuator health endpoint",Medium
-"intitle:""index of"" ""docker-compose""","Finds exposed Docker Compose files in directory listings",High
-"site:r2.cloudflarestorage.com ""<target>""","Finds leaked files and buckets on Cloudflare R2 object storage for target",Critical
-"site:s3.wasabisys.com ""<target>""","Finds files stored on Wasabi Hot Cloud Storage referencing target",Critical
-"site:*.backblazeb2.com ""<target>""","Finds files and data stored on Backblaze B2 cloud storage referencing target",Critical
-"site:f000.backblazeb2.com ""<target>""","Finds files on Backblaze B2 primary download node for target",Critical
-"site:oss-*.aliyuncs.com ""<target>""","Finds files on Alibaba Cloud OSS object storage buckets referencing target",Critical
-"site:cos.*.myqcloud.com ""<target>""","Finds files stored on Tencent Cloud COS object storage referencing target",Critical
-"site:objectstorage.*.oraclecloud.com ""<target>""","Finds files on Oracle Cloud Infrastructure (OCI) object storage for target",Critical
-"site:s3.*.scw.cloud ""<target>""","Finds files stored on Scaleway Object Storage referencing target",Critical
-"site:*.supabase.co/storage/v1/object/public/","Finds publicly accessible files and media hosted on Supabase storage buckets",High
-"site:firebaseio.com inurl:"".json""","Discovers open Firebase Realtime Databases returning JSON data without authentication",Critical
-"filetype:tfstate ""terraform_version"" ""<target>""","Finds exposed Terraform state files referencing target infrastructure",Critical
-"filetype:tfvars ""access_key"" | ""secret_key""","Finds exposed Terraform variable files containing cloud access keys",Critical
-"filetype:yaml ""apiVersion: v1"" ""kind: Secret"" ""data:""","Finds exposed Kubernetes Secret definitions with base64 encoded credentials",Critical
-"""clusters:"" ""client-certificate-data:"" filetype:yaml","Finds exposed Kubernetes kubeconfig files granting cluster API access",Critical
+"Query","Description","RiskLevel"
+"site:docs.google.com inurl:""/d/"" ""<target>""","Finds Google Docs documents referencing the target domain (internal docs, spreadsheets, presentations)","Critical"
+"site:onedrive.live.com ""<target>""","Finds OneDrive files referencing target -- internal presentations, photos, documents accidentally made public","Critical"
+"site:dropbox.com/s ""<target>""","Finds shared Dropbox links containing source code, proprietary info, or customer data for target","Critical"
+"site:box.com/s ""<target>""","Finds Box-hosted files like internal reports and client contracts for target","Critical"
+"site:dev.azure.com ""<target>""","Finds Azure DevOps repos and pipelines exposing API keys, auth tokens, or unsecured repositories","Critical"
+"site:sharepoint.com ""<target>""","Finds SharePoint-hosted internal communications, project plans, and employee records","Critical"
+"site:digitaloceanspaces.com ""<target>""","Finds DigitalOcean Spaces storing database backups, config files, and logs for target","Critical"
+"site:firebaseio.com ""<target>""","Finds Firebase-hosted app secrets, user data, and private API endpoints","Critical"
+"site:jfrog.io ""<target>""","Finds exposed JFrog artifacts, builds, and release packages for target","High"
+"site:s3-external-1.amazonaws.com ""<target>""","Finds files on lesser-known AWS S3 subdomain (s3-external-1) for target","Critical"
+"site:s3.dualstack.us-east-1.amazonaws.com ""<target>""","Finds files on AWS S3 dualstack subdomain for target","Critical"
+"site:s3.amazonaws.com ""<target>""","Finds files on primary AWS S3 subdomain for target","Critical"
+"site:blob.core.windows.net ""<target>""","Finds files on Azure Blob Storage referencing target","Critical"
+"site:googleapis.com ""<target>""","Finds Google Cloud Storage and API data referencing target","Critical"
+"site:drive.google.com ""<target>""","Finds Google Drive files shared publicly referencing target","Critical"
+"site:s3.amazonaws.com intitle:index.of.bucket","Finds AWS S3 buckets with directory listing enabled","Critical"
+"site:amazonaws.com inurl:"".s3.amazonaws.com/""","Finds files on S3 buckets via URL pattern","Critical"
+"site:.s3.amazonaws.com ""Company""","Finds company-related files on S3 buckets","High"
+"intitle:index.of.bucket","Finds any cloud storage bucket with directory listing","High"
+"site:*.amazonaws.com inurl:index.html","Finds S3 buckets serving static websites","Medium"
+"site:storage.googleapis.com intitle:""Index of""","Finds Google Cloud Storage buckets with directory listing","Critical"
+"site:s3.amazonaws.com intitle:""Index of""","Finds S3 buckets with directory listing enabled","Critical"
+"site:blob.core.windows.net intitle:""Index of""","Finds Azure Blob Storage with directory listing","Critical"
+"inurl:blob.core.windows.net","Find indexed URLs containing `blob.core.windows.net` to inventory cloud-hosted assets or storage references.","Medium"
+"inurl:storage.googleapis.com","Finds Google Cloud Storage URLs","Medium"
+"filetype:env ""DIGITALOCEAN_TOKEN""","Finds .env files with DigitalOcean API tokens","Critical"
+"filetype:env ""HEROKU_API_KEY""","Finds .env files with Heroku API keys","Critical"
+"inurl:/metrics","Finds exposed Kubernetes/Prometheus metrics endpoints","High"
+"inurl:/healthz","Finds exposed Kubernetes health check endpoints","Medium"
+"inurl:/actuator","Finds exposed Spring Boot actuator endpoints","High"
+"inurl:/actuator/env","Finds Spring Boot actuator env endpoint (leaks config)","Critical"
+"inurl:/actuator/health","Finds Spring Boot actuator health endpoint","Medium"
+"intitle:""index of"" ""docker-compose""","Finds exposed Docker Compose files in directory listings","High"
+"site:r2.cloudflarestorage.com ""<target>""","Finds leaked files and buckets on Cloudflare R2 object storage for target","Critical"
+"site:s3.wasabisys.com ""<target>""","Finds files stored on Wasabi Hot Cloud Storage referencing target","Critical"
+"site:*.backblazeb2.com ""<target>""","Finds files and data stored on Backblaze B2 cloud storage referencing target","Critical"
+"site:f000.backblazeb2.com ""<target>""","Finds files on Backblaze B2 primary download node for target","Critical"
+"site:oss-*.aliyuncs.com ""<target>""","Finds files on Alibaba Cloud OSS object storage buckets referencing target","Critical"
+"site:cos.*.myqcloud.com ""<target>""","Finds files stored on Tencent Cloud COS object storage referencing target","Critical"
+"site:objectstorage.*.oraclecloud.com ""<target>""","Finds files on Oracle Cloud Infrastructure (OCI) object storage for target","Critical"
+"site:s3.*.scw.cloud ""<target>""","Finds files stored on Scaleway Object Storage referencing target","Critical"
+"site:*.supabase.co/storage/v1/object/public/","Finds publicly accessible files and media hosted on Supabase storage buckets","High"
+"site:firebaseio.com inurl:"".json""","Discovers open Firebase Realtime Databases returning JSON data without authentication","Critical"
+"filetype:tfstate ""terraform_version"" ""<target>""","Finds exposed Terraform state files referencing target infrastructure","Critical"
+"filetype:tfvars ""access_key"" | ""secret_key""","Finds exposed Terraform variable files containing cloud access keys","Critical"
+"filetype:yaml ""apiVersion: v1"" ""kind: Secret"" ""data:""","Finds exposed Kubernetes Secret definitions with base64 encoded credentials","Critical"
+"""clusters:"" ""client-certificate-data:"" filetype:yaml","Finds exposed Kubernetes kubeconfig files granting cluster API access","Critical"
+"site:github.com ""<target>"" ""workers.dev""","Find public Cloudflare Workers URLs related to a target for asset inventory.","Low"
+"site:github.com ""<target>"" ""pages.dev""","Find public Cloudflare Pages deployments related to a target.","Low"
+"site:github.com ""<target>"" ""vercel.app""","Find public Vercel preview or production URLs mentioning the target.","Low"
+"site:github.com ""<target>"" ""netlify.app""","Find public Netlify deployment URLs mentioning the target.","Low"
+"site:github.com ""<target>"" ""supabase.co"" ""service_role""","Flag public Supabase configuration mentioning the privileged service-role field for manual review.","High"
+"site:github.com ""<target>"" ""firebaseapp.com"" ""databaseURL""","Find public Firebase database URL configuration referencing the target.","Low"
+"site:github.com ""<target>"" ""r2.cloudflarestorage.com""","Find public Cloudflare R2 object URLs related to the target.","Low"
+"site:github.com ""<target>"" ""blob.vercel-storage.com""","Find public Vercel Blob URLs related to a target.","Low"
+"site:github.com ""<target>"" ""neon.tech"" ""DATABASE_URL""","Flag public Neon database connection-string variable references for manual review.","Medium"
+"site:github.com ""<target>"" ""upstash.io"" ""REST_TOKEN""","Flag public Upstash REST token variable references for manual review.","Medium"
+"site:github.com ""<target>"" ""cloudflarestorage.com"" ""AWS_SECRET_ACCESS_KEY""","Flag public R2-compatible credential configuration for manual review; do not record values.","High"
+"site:github.com ""<target>"" ""fly.dev""","Find public Fly.io deployment URLs or configuration referencing the target.","Low"
+"site:<target> ""s3-website"" ""amazonaws.com""","Find published S3 static-website endpoint references for asset inventory.","Low"
+"site:<target> ""s3-website-us-east-1.amazonaws.com""","Locate indexed legacy S3 website endpoint hostnames tied to the target.","Low"
+"site:<target> ""storage.googleapis.com""","Locate public Google Cloud Storage object URL references for asset inventory.","Low"
+"site:<target> ""storage.cloud.google.com""","Find indexed Google Cloud Storage browser-link references.","Low"
+"site:<target> ""blob.core.windows.net""","Find Azure Blob Storage links indexed within the authorized domain.","Low"
+"site:<target> ""web.core.windows.net""","Find Azure Storage static-website links associated with the target.","Low"
+"site:<target> ""azureedge.net""","Locate Azure CDN hostname references for infrastructure inventory.","Low"
+"site:<target> ""cloudfront.net""","Find CloudFront distribution hostnames referenced on target pages.","Low"
+"site:<target> ""run.app""","Locate Google Cloud Run service URLs mentioned by target properties.","Low"
+"site:<target> ""azurewebsites.net""","Find Azure App Service default hostnames linked from the target.","Low"
+"site:<target> ""appspot.com""","Locate App Engine default-domain references connected to the target.","Low"
+"site:<target> ""firebaseapp.com""","Locate Firebase Hosting hostname references for asset inventory.","Low"
+"site:<target> ""web.app""","Find Firebase Hosting web.app references associated with target pages.","Low"
+"site:github.com ""<target>"" ""AWS::S3::BucketPolicy"" ""PublicRead""","Find public infrastructure templates that define S3 bucket access policy.","Low"
+"site:github.com ""<target>"" ""BlockPublicAcls"" ""IgnorePublicAcls""","Find published S3 public-access-block configuration for manual review.","Low"
+"site:github.com ""<target>"" ""allUsers"" ""roles/storage.objectViewer""","Find public GCS IAM bindings that may intentionally publish objects.","Low"
+"site:github.com ""<target>"" ""allowBlobPublicAccess"" ""storageAccount""","Locate public Azure Storage account access configuration references.","Low"
+"site:github.com ""<target>"" ""publicNetworkAccess"" ""Enabled""","Find published cloud resource network-access settings for manual review.","Low"
+"site:github.com ""<target>"" ""ingress: all"" ""run.googleapis.com""","Find public Cloud Run ingress configuration for service inventory.","Low"
+"site:github.com ""<target>"" ""run.app"" ""ingress""","Locate public Cloud Run routing settings tied to target-related projects.","Low"
+"site:github.com ""<target>"" ""kind: Ingress"" ""host:""","Find Kubernetes ingress hostname declarations in public deployments.","Low"
+"site:github.com ""<target>"" ""kind: HTTPRoute"" ""hostnames:""","Find Gateway API route hostnames associated with target services.","Low"
+"site:github.com ""<target>"" ""kind: Gateway"" ""listeners:""","Locate public Kubernetes Gateway listener settings.","Low"
+"site:github.com ""<target>"" ""kind: VirtualService"" ""hosts:""","Find Istio routing hostnames for authorized deployment inventory.","Low"
+"site:github.com ""<target>"" ""kind: Service"" ""type: LoadBalancer""","Locate published Kubernetes externally routable service definitions.","Low"
+"site:github.com ""<target>"" ""kind: Service"" ""type: NodePort""","Find Kubernetes NodePort service manifests for network inventory.","Low"
+"site:github.com ""<target>"" ""kind: ConfigMap"" ""data:""","Find public Kubernetes configuration objects; contents need human review.","Low"
+"site:github.com ""<target>"" ""eks.amazonaws.com/role-arn""","Find public EKS IAM role annotations used by workloads.","Low"
+"site:github.com ""<target>"" ""iam.gke.io/gcp-service-account""","Locate public GKE workload identity annotations.","Low"
+"site:github.com ""<target>"" ""azure.workload.identity/client-id""","Find AKS workload identity client identifiers in published manifests.","Low"
+"site:github.com ""<target>"" ""aws-load-balancer-controller"" ""alb.ingress.kubernetes.io""","Find ALB ingress annotations in target-related code.","Low"
+"site:github.com ""<target>"" ""external-dns.alpha.kubernetes.io/hostname""","Locate external-dns hostname settings for cloud asset inventory.","Low"
+"site:github.com ""<target>"" ""cert-manager.io/cluster-issuer"" ""Ingress""","Find public ingress certificate-issuer annotations.","Low"
+"site:github.com ""<target>"" ""kind: NetworkPolicy"" ""podSelector""","Find published Kubernetes workload traffic restrictions.","Low"
+"site:github.com ""<target>"" ""kind: PodDisruptionBudget"" ""selector""","Find public workload availability configuration for infrastructure review.","Low"
+"site:github.com ""<target>"" ""apiVersion: autoscaling/v2"" ""HorizontalPodAutoscaler""","Locate published autoscaling configuration associated with target workloads.","Low"

@@ -4,13 +4,16 @@ Google Dork queries for active reconnaissance -- subdomain enumeration, hidden e
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| Critical | 6 | Juicy file extensions, confidentiality markers, AEM paths, Pastebin leaks, editable Google Docs |
-| High | 24 | Subdomain enum, API endpoints, code leaks, test envs, file uploads, monitoring, Atlassian, GitLab |
-| Medium | 12 | Document files, Swagger, monitoring tools, Jira, FTP, presentations |
-| Low | 22 | Bug bounty programs, responsible disclosure, hall of fame, security.txt |
-| **Total** | **8,731** | |
+| Risk Level | Count |
+|---|---:|
+| Critical | 6 |
+| High | 32 |
+| Medium | 6,631 |
+| Low | 33 |
+
+**Total: 6,702 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Query Reference
 

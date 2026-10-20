@@ -5,14 +5,15 @@ Dork queries designed to identify Content Management System installations, versi
 ## Summary
 
 | Risk Level | Count |
-|------------|-------|
-| Critical | 18 |
-| High | 20 |
-| Medium | 18 |
-| Low | 6 |
-| Informational | 2 |
+|---|---:|
+| Critical | 25 |
+| High | 16 |
+| Medium | 84 |
+| Low | 16 |
 
-**Total: 878 dorks**
+**Total: 141 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
 

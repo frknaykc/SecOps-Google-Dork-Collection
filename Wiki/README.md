@@ -4,12 +4,15 @@ Google Dork queries for discovering MediaWiki installations, WikkaWiki instances
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| High | 5 | Login/registration pages, directory listings, login redirects |
-| Medium | 15 | Wiki installations by domain TLD and URL path patterns |
-| Low | 17 | General wiki fingerprinting, page footers, content discovery |
-| **Total** | **51** | |
+| Risk Level | Count |
+|---|---:|
+| High | 5 |
+| Medium | 18 |
+| Low | 21 |
+
+**Total: 44 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Query Reference
 
@@ -21,8 +24,8 @@ Dorks that find wiki login/registration pages or directory listings -- these can
 |-------|---------------|
 | `site:.edu "Log in / create account"` | MediaWiki login pages on .edu domains allowing account creation |
 | `"Log in / createaccount"` | MediaWiki login/registration pages (may allow open registration) |
-| `"wiki/index.php?title=Special:Userlogin&returnto"` | MediaWiki login pages with return-to redirect parameters |
-| `inurl:wiki/index.php?title=Special:Userlogin&returnto` | MediaWiki user login pages via URL pattern |
+| `"wiki/index.php?title=Special:Userlogin&amp;returnto"` | MediaWiki login pages with return-to redirect parameters |
+| `inurl:wiki/index.php?title=Special:Userlogin&amp;returnto` | MediaWiki user login pages via URL pattern |
 | `"Parent Directory" "Last modified" wikipedia` | Directory listings related to Wikipedia/wiki data or mirrors |
 
 ### Medium Risk
@@ -31,7 +34,6 @@ Dorks that identify specific wiki installations by domain, path, or subdomain pa
 
 | Query | What It Finds |
 |-------|---------------|
-| `"There is currently no text in this page..."` | Empty/stub wiki pages that may allow anonymous editing |
 | `allinurl:".edu/mediawiki/index.php"` | MediaWiki installations on .edu (university) domains |
 | `allinurl:".com/mediawiki/index.php"` | MediaWiki installations on .com domains |
 | `allinurl:".net/mediawiki/index.php"` | MediaWiki installations on .net domains |
@@ -65,7 +67,7 @@ General wiki fingerprinting and content discovery dorks.
 | `inurl:wiki` | Any wiki-related URL paths |
 | `"isa registered trademark of the Wikimedia Foundation, Inc.,"` | Sites running Wikimedia Foundation software |
 | `"wiki inurl:.edu"` | Wiki installations on educational domains |
-| `wiki inurl:.edu` | Wiki pages on .edu domains |
+| `"wiki inurl:.edu"` | Wiki pages on .edu domains |
 | `"Toolbox""This page was last modified` | MediaWiki pages via Toolbox sidebar and modification footer |
 | `"Login required to edit"` | Wikis with edit restrictions (protected content) |
 | `"Main Page""discussion""edit"` | MediaWiki main pages with discussion and edit tabs |

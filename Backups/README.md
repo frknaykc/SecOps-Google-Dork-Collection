@@ -4,12 +4,16 @@ Google Dork queries for finding exposed backup files, database dumps, archived w
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| Critical | 23 | SQL dumps with credentials, compressed DB backups, CMS backup plugin archives, CI/CD backups |
-| High | 29 | Archive files, directory listings, swap files, database files, application debug logs |
-| Medium | 13 | Temporary files, orig files, application backups |
-| **Total** | **65** | |
+| Risk Level | Count |
+|---|---:|
+| Critical | 23 |
+| High | 24 |
+| Medium | 20 |
+| Low | 5 |
+
+**Total: 72 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Query Reference
 

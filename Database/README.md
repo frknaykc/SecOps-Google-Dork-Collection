@@ -4,12 +4,16 @@ Dork queries designed to find exposed database interfaces, management tools, SQL
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| Critical | 35 | Direct access to database management tools, credentials, and open SQL/NoSQL databases |
-| High | 24 | Exposed database interfaces, login panels, and sensitive schema definitions |
-| Medium | 71 | Database connection error messages, version disclosures, and query fingerprints |
-| **Total** | **130** | |
+| Risk Level | Count |
+|---|---:|
+| Critical | 33 |
+| High | 13 |
+| Medium | 25 |
+| Low | 15 |
+
+**Total: 86 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
 

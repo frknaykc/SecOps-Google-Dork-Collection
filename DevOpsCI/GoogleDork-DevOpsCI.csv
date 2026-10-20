@@ -1,31 +1,106 @@
-Query,Description,RiskLevel
-"intitle:""Argo CD"" inurl:""/applications""","Finds exposed Argo CD GitOps continuous delivery control planes",Critical
-"intitle:""Argo Workflows"" inurl:"":2746""","Discovers exposed Argo Workflows Kubernetes pipeline interfaces",Critical
-"intitle:""Dashboard [Jenkins]"" inurl:"":8080""","Detects exposed Jenkins automation servers without authentication",Critical
-"inurl:"":8080/job/"" intitle:""Jenkins""","Finds exposed Jenkins CI/CD pipeline job definitions and build console outputs",Critical
-"intitle:""Harbor"" inurl:""/harbor/projects""","Finds exposed Harbor container registries and internal project repositories",Critical
-"inurl:""/v2/_catalog"" intitle:""index of""","Discovers exposed private Docker Registry HTTP API v2 catalog endpoints",Critical
-"intitle:""Portainer"" (inurl:"":9000"" | inurl:"":9443/#/auth"")","Finds exposed Portainer container management UI login pages",Critical
-"intitle:""Rancher"" inurl:""/login""","Discovers exposed Rancher multi-cluster Kubernetes management dashboards",Critical
-"intitle:""Explore projects · GitLab"" site:<target>","Finds public or exposed internal GitLab projects and source repositories",High
-"intitle:""Explore - Gitea: Git with a cup of tea""","Finds exposed Gitea self-hosted Git service instances",High
-"intitle:""Log in to TeamCity""","Discovers exposed JetBrains TeamCity CI/CD build management login pages",High
-"intitle:""Log In - Atlassian Bamboo""","Finds exposed Atlassian Bamboo continuous integration server login portals",High
-"intitle:""SonarQube"" inurl:""/projects""","Detects exposed SonarQube code quality and static security vulnerability dashboards",High
-"intitle:""Vault"" inurl:"":8200/ui/""","Finds exposed HashiCorp Vault secrets management UI consoles",Critical
-"intitle:""Consul by HashiCorp"" inurl:"":8500/ui""","Discovers exposed HashiCorp Consul service mesh and key-value store UIs",Critical
-"intitle:""Kubernetes Dashboard""","Finds exposed Kubernetes Dashboard cluster management web interfaces",Critical
-"inurl:"":10255/pods"" | inurl:"":10250/pods""","Detects exposed Kubernetes Kubelet API endpoints listing running pods and containers",Critical
-"inurl:"":2379/version"" | inurl:"":2379/v2/keys""","Finds exposed Kubernetes etcd distributed key-value store HTTP endpoints",Critical
-"intitle:""Prometheus Time Series Collection"" inurl:"":9090/graph""","Discovers exposed Prometheus monitoring and alerting web consoles",High
-"inurl:"":9090/targets"" intitle:""Prometheus""","Finds exposed Prometheus scrape targets exposing internal infrastructure topology",High
-"intitle:""Grafana"" (inurl:""/login"" | inurl:""/d/"" | inurl:""/dashboards"")","Finds exposed Grafana metric visualization and telemetry dashboards",High
-"intitle:""Uptime Kuma"" inurl:"":3001""","Discovers exposed Uptime Kuma monitoring dashboards leaking internal server domains",Medium
-"intitle:""Jaeger UI"" inurl:"":16686""","Finds exposed Jaeger distributed tracing dashboards revealing microservice traces",High
-"intitle:""Zipkin"" inurl:"":9411""","Detects exposed Zipkin distributed tracing system web consoles",High
-"intitle:""Checkmk"" inurl:""/check_mk/login.py""","Discovers Checkmk IT infrastructure monitoring login portals",High
-"intitle:""Zabbix"" inurl:""index.php""","Finds exposed Zabbix enterprise monitoring web interface login pages",High
-"intitle:""RabbitMQ Management""","Discovers exposed RabbitMQ message broker management consoles",High
-"intitle:""Kafdrop"" (inurl:"":9000"" | inurl:"":9001"")","Finds exposed Kafdrop Kafka cluster web UI browsers",Critical
-"intitle:""AKHQ"" inurl:"":8080""","Detects exposed AKHQ (Kafka GUI) management interfaces",Critical
-"intitle:""Sign In to Sentry""","Discovers self-hosted Sentry application monitoring and crash reporting login pages",High
+"Query","Description","RiskLevel"
+"intitle:""Argo CD"" inurl:""/applications""","Finds exposed Argo CD GitOps continuous delivery control planes","Critical"
+"intitle:""Argo Workflows"" inurl:"":2746""","Discovers exposed Argo Workflows Kubernetes pipeline interfaces","Critical"
+"intitle:""Dashboard [Jenkins]"" inurl:"":8080""","Detects exposed Jenkins automation servers without authentication","Critical"
+"inurl:"":8080/job/"" intitle:""Jenkins""","Finds exposed Jenkins CI/CD pipeline job definitions and build console outputs","Critical"
+"intitle:""Harbor"" inurl:""/harbor/projects""","Finds exposed Harbor container registries and internal project repositories","Critical"
+"inurl:""/v2/_catalog"" intitle:""index of""","Discovers exposed private Docker Registry HTTP API v2 catalog endpoints","Critical"
+"intitle:""Portainer"" (inurl:"":9000"" | inurl:"":9443/#/auth"")","Finds exposed Portainer container management UI login pages","Critical"
+"intitle:""Rancher"" inurl:""/login""","Discovers exposed Rancher multi-cluster Kubernetes management dashboards","Critical"
+"intitle:""Explore projects · GitLab"" site:<target>","Finds public or exposed internal GitLab projects and source repositories","High"
+"intitle:""Explore - Gitea: Git with a cup of tea""","Finds exposed Gitea self-hosted Git service instances","High"
+"intitle:""Log in to TeamCity""","Discovers exposed JetBrains TeamCity CI/CD build management login pages","High"
+"intitle:""Log In - Atlassian Bamboo""","Finds exposed Atlassian Bamboo continuous integration server login portals","High"
+"intitle:""SonarQube"" inurl:""/projects""","Detects exposed SonarQube code quality and static security vulnerability dashboards","High"
+"intitle:""Vault"" inurl:"":8200/ui/""","Finds exposed HashiCorp Vault secrets management UI consoles","Critical"
+"intitle:""Consul by HashiCorp"" inurl:"":8500/ui""","Discovers exposed HashiCorp Consul service mesh and key-value store UIs","Critical"
+"intitle:""Kubernetes Dashboard""","Finds exposed Kubernetes Dashboard cluster management web interfaces","Critical"
+"inurl:"":10255/pods"" | inurl:"":10250/pods""","Detects exposed Kubernetes Kubelet API endpoints listing running pods and containers","Critical"
+"inurl:"":2379/version"" | inurl:"":2379/v2/keys""","Finds exposed Kubernetes etcd distributed key-value store HTTP endpoints","Critical"
+"intitle:""Prometheus Time Series Collection"" inurl:"":9090/graph""","Discovers exposed Prometheus monitoring and alerting web consoles","High"
+"inurl:"":9090/targets"" intitle:""Prometheus""","Finds exposed Prometheus scrape targets exposing internal infrastructure topology","High"
+"intitle:""Grafana"" (inurl:""/login"" | inurl:""/d/"" | inurl:""/dashboards"")","Finds exposed Grafana metric visualization and telemetry dashboards","High"
+"intitle:""Uptime Kuma"" inurl:"":3001""","Discovers exposed Uptime Kuma monitoring dashboards leaking internal server domains","Medium"
+"intitle:""Jaeger UI"" inurl:"":16686""","Finds exposed Jaeger distributed tracing dashboards revealing microservice traces","High"
+"intitle:""Zipkin"" inurl:"":9411""","Detects exposed Zipkin distributed tracing system web consoles","High"
+"intitle:""Checkmk"" inurl:""/check_mk/login.py""","Discovers Checkmk IT infrastructure monitoring login portals","High"
+"intitle:""Zabbix"" inurl:""index.php""","Finds exposed Zabbix enterprise monitoring web interface login pages","High"
+"intitle:""RabbitMQ Management""","Discovers exposed RabbitMQ message broker management consoles","High"
+"intitle:""Kafdrop"" (inurl:"":9000"" | inurl:"":9001"")","Finds exposed Kafdrop Kafka cluster web UI browsers","Critical"
+"intitle:""AKHQ"" inurl:"":8080""","Detects exposed AKHQ (Kafka GUI) management interfaces","Critical"
+"intitle:""Sign In to Sentry""","Discovers self-hosted Sentry application monitoring and crash reporting login pages","High"
+"site:github.com ""<target>"" ""id-token: write""","Find public GitHub Actions OIDC workflows mentioning the target for trust-policy review.","Low"
+"site:github.com ""<target>"" ""pull_request_target"" ""actions/checkout""","Find public Actions workflows combining privileged pull-request events with checkout; review trust boundaries manually.","Medium"
+"site:github.com ""<target>"" ""permissions: write-all""","Find public workflows requesting broad token permissions for authorized review.","Medium"
+"site:github.com ""<target>"" ""aws-actions/configure-aws-credentials""","Find public AWS deployment workflows related to the target.","Low"
+"site:github.com ""<target>"" ""azure/login"" ""client-id""","Find public Azure federated-login workflows mentioning the target.","Low"
+"site:github.com ""<target>"" ""google-github-actions/auth""","Find public Google Cloud authentication workflows mentioning the target.","Low"
+"site:github.com ""<target>"" ""argoproj.io/v1alpha1"" ""Application""","Find public Argo CD application manifests referring to a target.","Low"
+"site:github.com ""<target>"" ""kind: ClusterRoleBinding""","Find public Kubernetes cluster-role bindings related to the target for access review.","Medium"
+"site:github.com ""<target>"" ""automountServiceAccountToken: true""","Find public Kubernetes workload manifests explicitly mounting service-account tokens.","Low"
+"site:github.com ""<target>"" ""hostPath:"" ""privileged: true""","Find public container manifests combining host mounts and privileged mode; validate context before assessing risk.","High"
+"site:github.com ""<target>"" ""terraform.tfstate""","Find public references to Terraform state related to the target; check whether actual state data is exposed.","Medium"
+"site:github.com ""<target>"" ""backend"" ""s3"" ""terraform""","Find public Terraform backend configuration referencing target infrastructure.","Low"
+"site:github.com ""<target>"" ""helm"" ""values.yaml""","Find public Helm values files related to the target for configuration review.","Low"
+"site:github.com ""<target>"" ""imagePullSecrets""","Find public Kubernetes image-pull secret references; a reference is not a disclosed secret.","Low"
+"site:<target> intitle:""Argo CD""","Inventory indexed Argo CD pages belonging to an authorized target.","Low"
+"site:github.com ""<target>"" ""provenance"" ""attestation""","Find public software-supply-chain attestation configuration referring to the target.","Low"
+"site:github.com ""<target>"" ""id-token: write"" ""permissions:""","Find public GitHub Actions workflows requesting OIDC tokens for deployment.","Low"
+"site:github.com ""<target>"" ""aws-actions/configure-aws-credentials"" ""role-to-assume""","Find public AWS role-assumption workflows using GitHub Actions.","Low"
+"site:github.com ""<target>"" ""google-github-actions/auth"" ""workload_identity_provider""","Find published GCP workload identity workflows for deployment inventory.","Low"
+"site:github.com ""<target>"" ""workflow_call:"" ""secrets:""","Locate public reusable workflow definitions that document required secrets.","Low"
+"site:github.com ""<target>"" ""workflow_dispatch:"" ""inputs:""","Find manual workflow triggers and their declared inputs in public repositories.","Low"
+"site:github.com ""<target>"" ""pull_request_target:"" ""permissions:""","Find privileged pull-request workflow configuration for authorized code review.","Low"
+"site:github.com ""<target>"" ""actions/upload-artifact"" ""retention-days""","Locate artifact-retention settings in public GitHub Actions workflows.","Low"
+"site:github.com ""<target>"" ""environment:"" ""deployment""","Find workflow deployment-environment declarations for pipeline inventory.","Low"
+"site:github.com ""<target>"" ""secrets: inherit"" ""workflow_call""","Locate public reusable-workflow secret inheritance references.","Low"
+"site:github.com ""<target>"" ""attest-build-provenance"" ""artifact""","Find public artifact-attestation workflow references for supply-chain review.","Low"
+"site:gitlab.com ""<target>"" "".gitlab-ci.yml"" ""artifacts:""","Find indexed GitLab pipeline files declaring build artifacts.","Low"
+"site:gitlab.com ""<target>"" "".gitlab-ci.yml"" ""id_tokens:""","Locate public GitLab CI job identity token configuration.","Low"
+"site:gitlab.com ""<target>"" "".gitlab-ci.yml"" ""include:""","Find GitLab CI pipeline includes that pull reusable jobs.","Low"
+"site:gitlab.com ""<target>"" ""artifacts:reports:dotenv""","Find public GitLab dotenv artifact usage for manual pipeline review.","Low"
+"site:gitlab.com ""<target>"" ""CI_JOB_JWT_V2"" ""vault""","Locate legacy GitLab job identity references to Vault integration.","Low"
+"site:github.com ""<target>"" ""argocd-cm"" ""url:""","Locate public Argo CD configuration references that document an instance URL.","Low"
+"site:github.com ""<target>"" ""ApplicationSet"" ""generators:""","Find published Argo CD ApplicationSet definitions for GitOps inventory.","Low"
+"site:github.com ""<target>"" ""kind: Application"" ""repoURL:""","Locate public Argo CD application manifests referencing deployment repositories.","Low"
+"site:github.com ""<target>"" ""kind: Kustomization"" ""sourceRef:""","Find public Flux reconciliation resources and their source references.","Low"
+"site:github.com ""<target>"" ""HelmRelease"" ""chart:""","Locate HelmRelease manifests used to deploy target-related services.","Low"
+"site:github.com ""<target>"" ""backend \""s3\"""" ""bucket""","Find public Terraform backend declarations referencing S3 state storage.","Low"
+"site:github.com ""<target>"" ""backend \""azurerm\"""" ""container_name""","Locate public Azure-backed Terraform state configuration examples.","Low"
+"site:github.com ""<target>"" ""backend \""gcs\"""" ""bucket""","Find public Google Cloud Storage Terraform backend declarations.","Low"
+"site:github.com ""<target>"" ""kind: ExternalSecret"" ""secretStoreRef""","Locate public External Secrets Operator resource definitions.","Low"
+"site:github.com ""<target>"" ""kind: SealedSecret"" ""encryptedData""","Find Sealed Secrets manifests; ciphertext publication does not imply compromise.","Low"
+"site:github.com ""<target>"" ""services:"" ""secrets:"" ""file:""","Find Compose secret-mount declarations in target-related repositories.","Low"
+"site:github.com ""<target>"" ""docker/build-push-action"" ""provenance:""","Locate published container build provenance settings in workflows.","Low"
+"site:github.com ""<target>"" ""Cosign"" ""attest""","Find public image attestation steps in target-related build pipelines.","Low"
+"site:<target> ""Argo CD"" ""applications"" ""sync status""","Locate indexed Argo CD deployment status references for authorized inventory.","Low"
+"site:<target> ""GitLab"" ""job artifacts"" ""download""","Find documented GitLab build artifact downloads associated with the target.","Low"
+"site:github.com ""<target>"" ""renovate.json"" ""hostRules""","Locate public dependency automation host-rule settings for review.","Low"
+"site:github.com ""<target>"" ""dependabot.yml"" ""registries:""","Find public Dependabot registry configuration references.","Low"
+"site:github.com ""<target>"" ""buildkit"" ""secret"" ""RUN --mount""","Locate Docker BuildKit secret-mount usage in published build definitions.","Low"
+"site:github.com ""<target>"" ""permissions:"" ""packages: write""","Find workflow package-publishing permissions for authorized code review.","Low"
+"site:github.com ""<target>"" ""actions/attest@"" ""id-token: write""","Find public GitHub Actions build provenance attestation workflows.","Low"
+"site:github.com ""<target>"" ""actions/attest@"" ""sbom-path:""","Locate public GitHub Actions software-bill-of-materials attestation steps.","Low"
+"site:github.com ""<target>"" ""attestations: write"" ""subject-path:""","Find workflows declaring attestation permissions and artifact subjects.","Low"
+"site:<target> ""_type"" ""https://in-toto.io/Statement/v1"" ""predicateType""","Identify indexed in-toto attestation statements for supply-chain review.","Low"
+"site:<target> ""https://slsa.dev/provenance/v1"" ""buildDefinition""","Find published SLSA build provenance statements; provenance is not a safety guarantee.","Low"
+"site:<target> ""bomFormat"" ""CycloneDX"" ""components""","Locate public CycloneDX software bills of materials for dependency inventory.","Low"
+"site:<target> ""SPDXID"" ""packages"" ""creationInfo""","Locate public SPDX-formatted dependency inventories.","Low"
+"site:github.com ""<target>"" ""workflow_call"" ""secrets: inherit""","Find reusable workflows inheriting caller secrets for manual trust-boundary review.","Low"
+"site:github.com ""<target>"" ""workflow_call"" ""permissions"" ""id-token""","Find reusable OIDC-enabled workflows for permissions review.","Low"
+"site:gitlab.com ""<target>"" ""include:remote"" ""gitlab-ci""","Locate public GitLab CI configurations that import remote job templates.","Low"
+"site:gitlab.com ""<target>"" ""include:component"" ""inputs""","Find GitLab CI component inclusions and parameter references.","Low"
+"site:github.com ""<target>"" ""prefect.yaml"" ""work_pool""","Find published Prefect deployment manifests naming execution work pools.","Low"
+"site:github.com ""<target>"" ""prefect.yaml"" ""deployments"" ""pull""","Find Prefect deployment pull-step definitions for source provenance review.","Low"
+"site:<target> ""Prefect"" ""work pool"" ""deployments""","Identify indexed Prefect orchestration interfaces or guides.","Low"
+"site:github.com ""<target>"" ""dagster.yaml"" ""run_launcher""","Find public Dagster run-launcher configuration for infrastructure inventory.","Low"
+"site:github.com ""<target>"" ""dagster.yaml"" ""compute_logs""","Find published Dagster compute-log storage configuration references.","Low"
+"site:<target> ""Dagster"" ""runs"" ""assets""","Locate indexed Dagster operational dashboards or guides for inventory.","Low"
+"site:<target> ""Temporal"" ""namespace"" ""task queue""","Identify indexed Temporal workflow and task-queue documentation.","Low"
+"site:<target> ""Temporal Web UI"" ""workflows""","Locate indexed Temporal Web UI entry points; a login page alone is not exposure.","Low"
+"site:github.com ""<target>"" ""n8n-nodes-base.webhook"" ""path""","Find published n8n webhook workflow definitions for endpoint inventory.","Low"
+"site:github.com ""<target>"" ""n8n"" ""nodes"" ""connections""","Find public n8n workflow exports describing automation connections.","Low"
+"site:<target> ""n8n"" ""X-N8N-API-KEY""","Find published n8n API authentication examples; verify context before inferring a leak.","Low"
+"site:github.com ""<target>"" ""otelcol"" ""service:"" ""pipelines:""","Locate public OpenTelemetry Collector pipeline configuration examples.","Low"
+"site:github.com ""<target>"" ""receivers:"" ""exporters:"" ""otlp""","Find source-published telemetry receiver and exporter configuration.","Low"
+"site:github.com ""<target>"" ""opentelemetry"" ""extensions:"" ""health_check""","Identify published Collector extension settings for service inventory.","Low"

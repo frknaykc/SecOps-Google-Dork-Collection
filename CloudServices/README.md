@@ -4,12 +4,16 @@ Google Dork queries for finding sensitive files, leaked data, and misconfigurati
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| Critical | 30 | Direct access to leaked docs, source code, credentials, multi-cloud storage, and IaC secrets |
-| High | 9 | Exposed artifacts, Supabase storage, Kubernetes endpoints, Docker configs |
-| Medium | 8 | URL pattern discovery, health check endpoints |
-| **Total** | **47** | |
+| Risk Level | Count |
+|---|---:|
+| Critical | 35 |
+| High | 9 |
+| Medium | 7 |
+| Low | 44 |
+
+**Total: 95 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Query Reference
 

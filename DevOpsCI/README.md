@@ -4,12 +4,16 @@ A curated collection of Google Dork queries for discovering exposed continuous i
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| Critical | 16 | Direct access to CI/CD pipelines, container registries, Kubernetes etcd/kubelet, Vault, and Kafka brokers |
-| High | 13 | Exposed metrics dashboards, source code quality platforms, and monitoring login interfaces |
-| Medium | 1 | Exposed uptime dashboards and internal server domain leaks |
-| **Total** | **30** | |
+| Risk Level | Count |
+|---|---:|
+| Critical | 15 |
+| High | 15 |
+| Medium | 5 |
+| Low | 70 |
+
+**Total: 105 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
 
@@ -19,7 +23,9 @@ A curated collection of Google Dork queries for discovering exposed continuous i
 | **Containers & Registries** | Docker Registry v2 API, Harbor, Portainer, Rancher |
 | **Kubernetes & Clusters** | Kubernetes Dashboard, Kubelet ports (`10250`/`10255`), etcd API (`2379`) |
 | **Secrets & Config** | HashiCorp Vault, HashiCorp Consul |
-| **Observability & Metrics** | Prometheus, Grafana, Jaeger Tracing, Zipkin, Checkmk, Zabbix, Uptime Kuma |
+| **Observability & Metrics** | Prometheus, Grafana, Jaeger Tracing, Zipkin, Checkmk, Zabbix, Uptime Kuma, OpenTelemetry Collector |
+| **Workflow Orchestration** | n8n, Prefect, Dagster, Temporal |
+| **Supply-Chain Evidence** | GitHub artifact attestations, SLSA provenance, SPDX and CycloneDX SBOMs |
 | **Message Brokers** | RabbitMQ Management, Kafdrop, AKHQ (Kafka GUI) |
 
 ## Query Reference

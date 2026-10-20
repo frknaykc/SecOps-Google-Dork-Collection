@@ -5,12 +5,15 @@ Dork queries designed to discover network monitoring tools, vulnerability scan r
 ## Summary
 
 | Risk Level | Count |
-|------------|-------|
-| Critical | 15 |
-| High | 22 |
-| Medium | 7 |
+|---|---:|
+| Critical | 14 |
+| High | 91 |
+| Medium | 9 |
+| Low | 5 |
 
-**Total: 121 dorks**
+**Total: 119 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
 

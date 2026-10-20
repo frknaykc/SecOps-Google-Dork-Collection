@@ -4,11 +4,16 @@ A curated collection of Google Dork queries for discovering exposed Artificial I
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| Critical | 27 | Direct access to model generation APIs, inference engines, MLOps dashboards, vector stores, and leaked API keys |
-| High | 19 | Exposed WebUIs, image generators, tracking instances, vector meta endpoints, and server metrics |
-| **Total** | **46** | |
+| Risk Level | Count |
+|---|---:|
+| Critical | 27 |
+| High | 22 |
+| Medium | 4 |
+| Low | 51 |
+
+**Total: 104 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
 
@@ -17,7 +22,7 @@ A curated collection of Google Dork queries for discovering exposed Artificial I
 | **LLM Inference Engines & Serving** | NVIDIA Triton, HuggingFace TGI, Ollama, vLLM, LocalAI, LM Studio, LiteLLM |
 | **AI Web UIs & Chat Platforms** | LibreChat, Open WebUI, Text Generation WebUI, AnythingLLM, FastGPT |
 | **Image & Multimodal Generators** | ComfyUI, Automatic1111 Stable Diffusion WebUI, Fooocus |
-| **Agent & Workflow Builders** | Flowise, Dify, LangFlow |
+| **Agent & Workflow Builders** | Flowise, Dify, LangFlow, and A2A Agent Card discovery |
 | **MLOps & Orchestration** | MLflow, Ray Dashboard, Kubeflow, Weights & Biases, JupyterLab |
 | **Vector Databases (RAG Storage)** | Qdrant Web UI & API, ChromaDB, Milvus Attu, Weaviate Console |
 | **Leaked AI API Keys** | DeepSeek, OpenAI (`sk-proj-`), Claude, Together AI, OpenRouter, HuggingFace, Groq, Voyage AI, Pinecone |

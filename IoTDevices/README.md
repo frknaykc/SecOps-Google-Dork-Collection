@@ -5,12 +5,15 @@ Dork queries designed to find internet-connected IoT devices including IP camera
 ## Summary
 
 | Risk Level | Count |
-|------------|-------|
+|---|---:|
 | Critical | 1 |
-| High | 42 |
-| Medium | 12 |
+| High | 736 |
+| Medium | 31 |
+| Low | 5 |
 
-**Total: 778 dorks**
+**Total: 773 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
 

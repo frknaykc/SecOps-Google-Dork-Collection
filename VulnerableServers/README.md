@@ -4,12 +4,15 @@ Google Dork queries for detecting servers with vulnerable parameters and error p
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| Critical | 11 | SQLi, SSRF, LFI, RCE-prone parameters, OpenSSL Heartbleed, web shells, exposed databases |
-| High | 21 | SQLi-prone URLs, open redirect scripts, exposed admin tools, file upload endpoints |
-| Medium | 9 | Version disclosure, URL patterns, robots.txt information leaks |
-| **Total** | **2,632** | |
+| Risk Level | Count |
+|---|---:|
+| Critical | 116 |
+| High | 2,328 |
+| Medium | 149 |
+
+**Total: 2,593 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Query Reference
 

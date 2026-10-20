@@ -4,12 +4,16 @@ Dork queries designed to find exposed configuration files, API keys, credentials
 
 ## Summary
 
-| Risk Level | Count | Description |
-|------------|-------|-------------|
-| Critical | 534 | Plaintext private keys, cloud credentials, database passwords, OAuth secrets, and IaC states |
-| High | 2,227 | Configuration files, exposed API tokens, server logs, RDP profiles, and repository configs |
-| Medium | 103 | Known host lists, public SSH keys, and general environment descriptors |
-| **Total** | **2,864** | |
+| Risk Level | Count |
+|---|---:|
+| Critical | 476 |
+| High | 2,227 |
+| Medium | 61 |
+| Low | 25 |
+
+**Total: 2,789 dorks**
+
+Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
 
