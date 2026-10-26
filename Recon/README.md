@@ -6,12 +6,12 @@ Google Dork queries for active reconnaissance -- subdomain enumeration, hidden e
 
 | Risk Level | Count |
 |---|---:|
-| Critical | 6 |
-| High | 32 |
-| Medium | 6,631 |
-| Low | 33 |
+| Critical | 5 |
+| High | 29 |
+| Medium | 6,633 |
+| Low | 37 |
 
-**Total: 6,702 dorks**
+**Total: 6,704 dorks**
 
 Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
@@ -36,8 +36,6 @@ site:tesla.com -www -shop -share -ir    # Keep narrowing
 
 | Query | What It Finds |
 |-------|---------------|
-| `site:<target> inurl:api \| site:*/rest \| site:*/v1 \| site:*/v2 \| site:*/v3` | API endpoints including REST and versioned API paths |
-| `inurl:apidocs \| inurl:api-docs \| inurl:swagger \| inurl:api-explorer \| inurl:redoc \| inurl:openapi \| intitle:"Swagger UI" site:<target>` | API documentation pages (Swagger, Redoc, OpenAPI) exposing endpoint details |
 | `site:<target> ext:php inurl:?` | PHP files with URL parameters -- potential injection points |
 | `(site:<target> \| site:<target2>) & "choose file"` | File upload endpoints across multiple domains |
 | `site:<target> intext:"choose file" \| intext:"select file" \| intext:"upload PDF"` | File upload forms via button/input text patterns |
@@ -46,7 +44,7 @@ site:tesla.com -www -shop -share -ir    # Keep narrowing
 
 | Query | What It Finds |
 |-------|---------------|
-| `site:<target> ext:log \| ext:txt \| ext:conf \| ext:cnf \| ext:ini \| ext:env \| ext:sh \| ext:bak \| ext:backup \| ext:swp \| ext:old \| ext:~ \| ext:git \| ext:svn \| ext:htpasswd \| ext:htaccess \| ext:json` | Files with sensitive extensions: logs, configs, backups, VCS, credentials |
+| `site:<target> (inurl:config OR inurl:env OR inurl:setting OR inurl:backup OR inurl:admin OR inurl:php)` | URL keyword inventory; matches alone do not establish exposure |
 | `inurl:conf \| inurl:env \| inurl:cgi \| inurl:bin \| inurl:etc \| inurl:root \| inurl:sql \| inurl:backup \| inurl:admin \| inurl:php site:<target>` | High-value URL paths (config, env, admin, SQL, backup directories) |
 | `site:<target> ext:txt \| ext:pdf \| ext:xml \| ext:xls \| ext:xlsx \| ext:ppt \| ext:pptx \| ext:doc \| ext:docx` | Exposed documents (PDF, Office, XML) on target |
 | `intext:"confidential" \| intext:"Not for Public Release" \| intext:"internal use only" \| intext:"do not distribute"` | Pages with confidentiality markers indicating sensitive internal documents |
@@ -55,7 +53,7 @@ site:tesla.com -www -shop -share -ir    # Keep narrowing
 
 | Query | What It Finds |
 |-------|---------------|
-| `inurl:test \| inurl:env \| inurl:dev \| inurl:staging \| inurl:sandbox \| inurl:debug \| inurl:temp \| inurl:internal \| inurl:demo site:<target>` | Test, dev, staging, and internal environments that may lack security controls |
+| `site:<target> (inurl:test OR inurl:env OR inurl:dev OR inurl:staging OR inurl:sandbox OR inurl:debug OR inurl:temp OR inurl:internal OR inurl:demo)` | Environment-related URL keywords; names do not prove weak access controls |
 | `inurl:/content/usergenerated \| inurl:/content/dam \| inurl:/jcr:content \| inurl:/libs/granite \| inurl:/etc/clientlibs \| inurl:/content/geometrixx \| inurl:/bin/wcm \| inurl:/crx/de site:<target>` | Adobe Experience Manager (AEM) paths, DAM assets, and CRX/DE console |
 
 ### Sensitive Parameter Discovery
@@ -78,6 +76,8 @@ Search third-party paste/code sites for leaked code, API keys, credentials, or i
 
 ### Disclosed Vulnerabilities & Bug Bounty
 
+The user-submitted policy queries include a historical `2021` filter. Retain it for historical research or deliberately change it for a different period; verify current policy terms separately.
+
 | Query | What It Finds |
 |-------|---------------|
 | `site:openbugbounty.org inurl:reports intext:"<target>"` | Publicly disclosed XSS and open redirect bugs on OpenBugBounty |
@@ -86,6 +86,10 @@ Search third-party paste/code sites for leaked code, API keys, credentials, or i
 | `inurl:/.well-known/security ext:txt` | Security.txt files at standard well-known path |
 | `site:*.gov.* "responsible disclosure"` | Government responsible disclosure pages |
 | `responsible disclosure hall of fame` | Responsible disclosure hall of fame pages |
+| `site:<target> inurl:support intext:security "2021"` | Historical support/security references, not a current policy guarantee |
+| `site:<target> intext:security report reward` | Security reporting pages mentioning rewards |
+| `site:<target> inurl:security report monetary` | Security URLs mentioning reports and monetary terms |
+| `site:<target> inurl:security inurl:report inurl:bounty` | URLs combining disclosure-program keywords |
 
 ### Monitoring & Dashboard Discovery
 
@@ -132,5 +136,7 @@ Search third-party paste/code sites for leaked code, API keys, credentials, or i
 | `&` | AND -- require both queries | `site:a.com & "choose file"` |
 
 ## Data Source
+
+Grouped API discovery queries are maintained in [APIExposure](../APIExposure/); the grouped log/configuration/backup query is in [SensitiveFiles](../SensitiveFiles/). They are not duplicated here.
 
 All queries in this collection are sourced from publicly available Google Dorking databases and security research. See the CSV file for the complete machine-readable dataset.

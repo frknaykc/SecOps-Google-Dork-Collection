@@ -34,7 +34,7 @@ This repository provides a **CSV collection of Google search-query leads** for a
 - **Identify potential vulnerability leads** — Parameters, error messages, and public configuration that warrant authorized validation
 - **Perform reconnaissance** — Subdomain enumeration, code leak hunting, cloud storage discovery, and API endpoint identification
 
-Each query has a **description** and a **risk level** (`Critical` / `High` / `Medium` / `Low` / `Informational`) for prioritizing manual review. A Google result is a lead, not confirmation of exposure, valid credentials, unauthorized access, or a vulnerability. Legacy queries may use outdated syntax or refer to products no longer in use. The latest category expansion and its source references are documented in [Research Sources](RESEARCH_SOURCES.md).
+Each query has a **description** and a **risk level** (`Critical` / `High` / `Medium` / `Low` / `Informational`) for prioritizing manual review. A Google result is a lead, not confirmation of exposure, valid credentials, unauthorized access, or a vulnerability. Legacy queries may use outdated syntax or refer to products no longer in use.
 
 ---
 
@@ -74,23 +74,23 @@ However, the same techniques can also be leveraged by malicious actors for recon
 | Databases | [Database/](Database/) | Find exposed database interfaces, phpMyAdmin, and SQL/NoSQL management tools | 86 |
 | Login Pages | [LoginPages/](LoginPages/) | Discover exposed login portals, VPN, SSO, and authentication endpoints | 1,705 |
 | Identity & Access | [IdentityAccess/](IdentityAccess/) | Inventory OIDC/OAuth, SAML, SCIM, and public identity integration references | 56 |
-| Sensitive Files | [SensitiveFiles/](SensitiveFiles/) | Locate indexed configs, API keys, credentials, logs, workflow exports, and private-key leads | 2,789 |
+| Sensitive Files | [SensitiveFiles/](SensitiveFiles/) | Locate indexed configs, API keys, credentials, logs, workflow exports, and private-key leads | 2,792 |
 | IoT Devices | [IoTDevices/](IoTDevices/) | Find internet-connected cameras, printers, NAS, and smart device interfaces | 773 |
 | Network Devices | [NetworkDevices/](NetworkDevices/) | Discover monitoring tools, scan reports, network graphs, and device interfaces | 119 |
 | CMS | [CMS/](CMS/) | Identify WordPress, Joomla, Drupal, TYPO3, Magento, and other CMS installations | 141 |
 | Cloud Services | [CloudServices/](CloudServices/) | Inventory AWS, Azure, GCP, R2, Wasabi, B2, and Firebase/Supabase storage leads | 95 |
 | Vulnerable Servers | [VulnerableServers/](VulnerableServers/) | Find parameters and interfaces that may warrant authorized security testing | 2,593 |
-| Error Messages | [ErrorMessages/](ErrorMessages/) | Find verbose error messages leaking SQL, stack traces, and server details | 184 |
+| Error Messages | [ErrorMessages/](ErrorMessages/) | Find error-message leads for review of possible SQL, stack-trace, or server details | 185 |
 | Backups | [Backups/](Backups/) | Find exposed backup files, database dumps, and archived web roots | 72 |
 | Wiki | [Wiki/](Wiki/) | Discover MediaWiki/WikkaWiki installations, login pages, and misconfigurations | 44 |
-| Recon | [Recon/](Recon/) | Template-based dorks for subdomain enum, code leaks, bug bounty, and API discovery | 6,702 |
+| Recon | [Recon/](Recon/) | Template-based dorks for subdomain enum, code leaks, bug bounty, and API discovery | 6,704 |
 | Threat Hunting | [ThreatHunting/](ThreatHunting/) | Find public C2, malware, incident-response, and defensive telemetry research leads | 304 |
 | DevOps & CI/CD | [DevOpsCI/](DevOpsCI/) | Inventory pipelines, orchestration, SBOMs, attestations, and observability references | 105 |
 | AI, LLM & MLOps | [AI-MLOps/](AI-MLOps/) | Find AI platform interfaces, A2A/MCP discovery references, and model-service leads | 104 |
-| API Exposure | [APIExposure/](APIExposure/) | Discover OpenAPI/AsyncAPI descriptions, GraphQL references, and developer interfaces | 63 |
-| OSINT & Leaks | [OSINT/](OSINT/) | Discover exposed SaaS collaboration spaces (Notion, Airtable, Trello), Zoom recordings, and PII | 38 |
+| API Exposure | [APIExposure/](APIExposure/) | Discover OpenAPI/AsyncAPI descriptions, GraphQL references, and developer interfaces | 65 |
+| OSINT & Leaks | [OSINT/](OSINT/) | Discover public professional profiles, SaaS collaboration spaces, and possible data-exposure leads | 39 |
 
-> **Total: 16,233 unique dorks** across 19 categories. Exact and typographic/case/whitespace variants have been deduplicated; queries have not been validated against live Google results.
+> **Total: 16,242 unique dorks** across 19 categories. Exact and typographic/case/whitespace variants have been deduplicated; queries have not been validated against live Google results.
 
 ---
 

@@ -7,8 +7,8 @@ Google Dork queries for detecting servers with vulnerable parameters and error p
 | Risk Level | Count |
 |---|---:|
 | Critical | 116 |
-| High | 2,328 |
-| Medium | 149 |
+| High | 2,326 |
+| Medium | 151 |
 
 **Total: 2,593 dorks**
 
@@ -26,13 +26,13 @@ Risk levels prioritize search leads; a matching result is not proof of a vulnera
 
 | Query | What It Finds |
 |-------|---------------|
-| `inurl:q= \| inurl:s= \| inurl:search= \| inurl:query= \| inurl:keyword= \| inurl:lang= inurl:& site:<target>` | Parameters that commonly reflect user input (search, query, keyword, lang) -- test for reflected XSS |
+| `site:<target> (inurl:q= OR inurl:s= OR inurl:search= OR inurl:query= OR inurl:keyword= OR inurl:lang=) inurl:&` | Input-handling review candidates; parameter names do not establish reflection or XSS |
 
 ### Open Redirect-Prone Parameters
 
 | Query | What It Finds |
 |-------|---------------|
-| `inurl:url= \| inurl:return= \| inurl:next= \| inurl:redirect= \| inurl:redir= \| inurl:ret= \| inurl:r2= \| inurl:page= inurl:& inurl:http site:<target>` | Redirect parameters (url, return, next, redirect) with HTTP values -- test for open redirect |
+| `site:<target> (inurl:url= OR inurl:return= OR inurl:next= OR inurl:redirect= OR inurl:redir= OR inurl:ret= OR inurl:r2= OR inurl:page=) inurl:& inurl:http` | Redirect-like parameters with HTTP URL text; accepted redirects require separate authorized validation |
 
 ### SQLi-Prone Parameters
 

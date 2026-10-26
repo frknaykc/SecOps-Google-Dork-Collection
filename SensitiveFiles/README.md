@@ -7,15 +7,17 @@ Dork queries designed to find exposed configuration files, API keys, credentials
 | Risk Level | Count |
 |---|---:|
 | Critical | 476 |
-| High | 2,227 |
+| High | 2,230 |
 | Medium | 61 |
 | Low | 25 |
 
-**Total: 2,789 dorks**
+**Total: 2,792 dorks**
 
 Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
+
+The user-submitted batch adds grouped confidentiality-marked documents and consumer-email references in government-hosted files, and relocates the grouped log/configuration/backup query from `Recon`. Before using the `site:gov` template, narrow it to an authorized government domain. Email-domain mentions alone do not establish personal-data exposure; do not collect or publish discovered addresses.
 
 | Category | Description |
 |----------|-------------|

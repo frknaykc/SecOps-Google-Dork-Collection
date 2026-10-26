@@ -1,4 +1,5 @@
 "Query","Description","RiskLevel"
+"site:linkedin.com/in (""Talent Acquisition"" OR ""Recruiter"" OR ""HR"" OR ""People Operations"") ""<target>"" -jobs -apply","Find public LinkedIn profiles mentioning recruiting or people-operations roles and an organization name; results do not verify current employment.","Low"
 "site:notion.site ""<target>""","Finds publicly published Notion workspaces and internal documentation for target","High"
 "site:notion.so ""<target>""","Finds internal processes, onboarding docs, and customer notes shared via Notion","High"
 "site:airtable.com/shr ""<target>""","Finds shared Airtable databases containing customer data, lead lists, or internal records","Critical"

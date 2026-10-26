@@ -9,10 +9,10 @@ Dork queries designed to find verbose error messages that leak sensitive server 
 | Critical | 10 |
 | High | 103 |
 | Medium | 60 |
-| Low | 10 |
+| Low | 11 |
 | Informational | 1 |
 
-**Total: 184 dorks**
+**Total: 185 dorks**
 
 Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 

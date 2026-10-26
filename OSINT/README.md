@@ -9,13 +9,15 @@ A curated collection of Google Dork queries designed for **Open Source Intellige
 | Critical | 5 |
 | High | 11 |
 | Medium | 3 |
-| Low | 19 |
+| Low | 20 |
 
-**Total: 38 dorks**
+**Total: 39 dorks**
 
 Risk levels prioritize search leads; a matching result is not proof of a vulnerability or unauthorized access.
 
 ## Coverage
+
+Public LinkedIn recruiting and people-operations profile discovery is included. For that query, replace `<target>` with an organization name; results do not verify current employment or authorize contacting individuals.
 
 | Platform / Focus Area | Description |
 |-----------------------|-------------|

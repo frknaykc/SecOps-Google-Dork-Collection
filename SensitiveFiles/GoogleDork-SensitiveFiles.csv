@@ -1,4 +1,7 @@
 "Query","Description","RiskLevel"
+"site:<target> (ext:log OR ext:txt OR ext:conf OR ext:cnf OR ext:ini OR ext:env OR ext:sh OR ext:bak OR ext:backup OR ext:swp OR ext:old OR ext:json OR inurl:""/.git/"" OR inurl:""/.svn/"" OR inurl:"".htpasswd"" OR inurl:"".htaccess"")","Find indexed logs, configuration, backups, and version-control paths for authorized review; file names and extensions alone do not prove sensitive contents.","High"
+"site:gov (intext:""@yahoo.com"" OR intext:""@gmail.com"" OR intext:""@outlook.com"" OR intext:""@hotmail.com"") (filetype:xls OR filetype:csv OR ext:xlsx OR ext:txt OR ext:sql)","Find indexed government-hosted files mentioning consumer email domains for privacy review; restrict site: to an authorized government domain before use.","High"
+"site:<target> (ext:txt OR ext:pdf OR ext:xml OR ext:xls OR ext:xlsx OR ext:ppt OR ext:pptx OR ext:doc OR ext:docx) (intext:""confidential"" OR intext:""Not for Public Release"" OR intext:""internal use only"" OR intext:""do not distribute"")","Find indexed documents with confidentiality or distribution restrictions for authorized review; labels alone do not prove unintended disclosure.","High"
 "inurl:.env","Finds exposed .env environment files","High"
 "filetype:env ""PASSWORD""","Finds .env files containing password values","Critical"
 "filetype:env ""SECRET""","Finds .env files containing secret values","Critical"

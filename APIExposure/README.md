@@ -7,16 +7,18 @@ Google queries for publicly indexed API specifications and developer consoles. V
 | Risk Level | Count |
 |---|---:|
 | Medium | 5 |
-| Low | 57 |
+| Low | 59 |
 | Informational | 1 |
 
-**Total: 63 dorks**
+**Total: 65 dorks**
 
 ## Coverage
 
 OpenAPI/Swagger, ReDoc, Springdoc, GraphQL consoles (including Dagster), gRPC configuration, AsyncAPI event descriptions, and webhook integration references.
 
 ## Usage
+
+Grouped API-path and documentation queries formerly listed in `Recon` are maintained here. Their alternatives share one `site:<target>` scope; public documentation or a Swagger UI title does not establish a vulnerability.
 
 Replace `<target>` with an organization name or domain as appropriate for the query. Search only authorized scopes. Manually verify whether an indexed result is current, publicly accessible, and actually relevant; never collect or publish discovered secret values.
 

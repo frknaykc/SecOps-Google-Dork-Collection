@@ -1,4 +1,5 @@
 "Query","Description","RiskLevel"
+"site:<target> (intext:""error"" OR intext:""exception"" OR intext:""not found"" OR intext:""failed"")","Find indexed pages containing generic error or failure wording; distinguish documentation and ordinary missing pages from diagnostic disclosures.","Low"
 """ORA-00921: unexpected end of SQL command""","Finds Oracle SQL syntax errors revealing database details","High"
 "intitle:""the page cannot be found"" inetmgr","Finds IIS 404 errors with IIS Manager references","Medium"
 """Fatal error: Call to undefined function"" -reply -the -next","Finds PHP fatal errors revealing code structure","High"

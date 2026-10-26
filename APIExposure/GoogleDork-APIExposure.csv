@@ -1,4 +1,6 @@
 "Query","Description","RiskLevel"
+"site:<target> (inurl:api OR inurl:""/rest"" OR inurl:""/v1"" OR inurl:""/v2"" OR inurl:""/v3"")","Find API, REST, and versioned URL paths within the target domain for inventory; a path match does not prove a working or unauthenticated API.","Low"
+"site:<target> (inurl:apidocs OR inurl:api-docs OR inurl:swagger OR inurl:api-explorer OR inurl:redoc OR inurl:openapi OR intitle:""Swagger UI"")","Find indexed API documentation and explorer interfaces; public Swagger or OpenAPI documentation is not evidence of XSS or broken access control.","Low"
 "site:<target> inurl:""/openapi.json""","Find indexed OpenAPI JSON specifications for authorized API inventory; documentation is not automatically sensitive.","Low"
 "site:<target> inurl:""/openapi.yaml""","Find publicly indexed OpenAPI YAML specifications on a target domain.","Low"
 "site:<target> inurl:""/swagger.json""","Find indexed Swagger specifications and review documented API operations.","Low"
